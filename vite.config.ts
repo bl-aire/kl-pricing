@@ -25,7 +25,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      "@/assets": "/src/assets",
+      "@/assets": "/assets",
       "@/utils": "/src/utils",
       "@/constants": "/src/constants",
       "@/styles": "/src/styles",

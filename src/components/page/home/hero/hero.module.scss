@@ -46,6 +46,17 @@
                     width: 100%;
                 }
             }
+            
+            &__dowloadLinks{
+                @include smaller-than($mantine-breakpoint-lg){
+                    margin:0 auto;
+                }
+    
+                @include smaller-than($mantine-breakpoint-sm){
+                    
+                }
+            }
+
         }
 
         &__cta{

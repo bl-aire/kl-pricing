@@ -38,7 +38,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #364330;
+            color: #364330 !important; 
+
+            > a {
+                color: #364330 !important; 
+            }
         }
 
         &__list{
