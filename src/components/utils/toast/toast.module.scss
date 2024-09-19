@@ -1,0 +1,50 @@
+.errorRoot{
+    background-color: var(--mantine-color-red-8);
+
+    &::before {
+        background-color: var(--mantine-color-white);
+    }
+}
+
+.successRoot{
+    background-color: var(--mantine-color-green-8);
+
+    &::before {
+        background-color: var(--mantine-color-white);
+    }
+}
+
+.title{
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.description{
+    font-size: 0.8rem;
+    font-weight: 300;
+    @include clamp-text(2);
+}
+
+.description,
+.title {
+  color: var(--mantine-color-white);
+}
+
+.errorCloseButton {
+    color: var(--mantine-color-white);
+    background-color: var(--mantine-color-red-7);
+  
+    @mixin hover {
+      background-color: var(--mantine-color-red-2);
+    }
+}
+
+
+.successCloseButton {
+    color: var(--mantine-color-white);
+    background-color: var(--mantine-color-green-7);
+  
+    @mixin hover {
+      background-color: var(--mantine-color-green-8);
+    }
+}
