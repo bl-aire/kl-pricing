@@ -379,7 +379,6 @@ export default function LegalPolicies() {
                                             Number (BVN) and National identity Number (NIN) for
                                             identity verification purposes;
                                         </List.Item>
-                                        <List.Item fz={14} fw={300} lh={2}></List.Item>
                                     </List>
                                 </Stack>
                             </Box>
