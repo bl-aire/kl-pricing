@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useMediaQuery, useDisclosure } from "@mantine/hooks";
 import { Box, Button, Burger, useMantineTheme, Menu } from "@mantine/core";
 
@@ -8,11 +8,14 @@ import PricingIndex from '@/components/ui/pricingIndex';
 import logo from "@/assets/logo.svg";
 
 export default function Header() {
-    const navigate = useNavigate();
     const [opened, { toggle }] = useDisclosure();
 
     const theme = useMantineTheme();
     const break_md = useMediaQuery(`(min-width: ${theme.breakpoints.md})`);
+
+    function getStarted(){
+        window.location.href='https://app.kasuwa.com/register';
+    }
 
     return (
         <header className={styles.header}>
@@ -49,7 +52,7 @@ export default function Header() {
                                     fw={500}
                                     color="orange.5"
                                     tt="uppercase"
-                                    onClick={() => navigate("/login")}
+                                    onClick={getStarted}
                                 >
                                     Get Started
                                 </Button>

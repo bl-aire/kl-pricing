@@ -37,8 +37,8 @@ export default function ValueProp() {
                                 </Text>
                             </Stack>
 
-                            <Text size="xs" tt="uppercase" fw={300} td="underline">
-                                <Anchor size="xs" href="https://app.kasuwa.com/login" target="_blank">
+                            <Text size="xs" tt="uppercase" fw={300}>
+                                <Anchor size="xs" href="https://app.kasuwa.com/login" target="_blank" underline="hover">
                                     Get Started
                                 </Anchor>
                             </Text>
@@ -62,8 +62,8 @@ export default function ValueProp() {
                                 </Text>
                             </Stack>
 
-                            <Text size="xs" tt="uppercase" fw={300} td="underline">
-                                <Anchor size="xs" href="https://app.kasuwa.com/login" target="_blank">
+                            <Text size="xs" tt="uppercase" fw={300}>
+                                <Anchor size="xs" href="https://app.kasuwa.com/login" target="_blank" underline="hover">
                                     Get Started
                                 </Anchor>
                             </Text>
@@ -87,8 +87,8 @@ export default function ValueProp() {
                                 </Text>
                             </Stack>
 
-                            <Text size="xs" tt="uppercase" fw={300} td="underline">
-                                <Anchor size="xs" href="https://app.kasuwa.com/login" target="_blank">
+                            <Text size="xs" tt="uppercase" fw={300}>
+                                <Anchor size="xs" href="https://app.kasuwa.com/login" target="_blank" underline="hover">
                                     Get Started
                                 </Anchor>
                             </Text>
@@ -113,8 +113,8 @@ export default function ValueProp() {
                                 </Text>
                             </Stack>
 
-                            <Text size="xs" tt="uppercase" fw={300} td="underline">
-                                <Anchor size="xs" href="https://app.kasuwa.com/login" target="_blank">
+                            <Text size="xs" tt="uppercase" fw={300}>
+                                <Anchor size="xs" href="https://app.kasuwa.com/login" target="_blank" underline="hover">
                                     Get Started
                                 </Anchor>
                             </Text>
@@ -137,8 +137,8 @@ export default function ValueProp() {
                                 </Text>
                             </Stack>
 
-                            <Text size="xs" tt="uppercase" fw={300} td="underline">
-                                <Anchor size="xs" href="https://app.kasuwa.com/login" target="_blank">
+                            <Text size="xs" tt="uppercase" fw={300}>
+                                <Anchor size="xs" href="https://app.kasuwa.com/login" target="_blank" underline="hover">
                                     Get Started
                                 </Anchor>
                             </Text>
@@ -161,8 +161,8 @@ export default function ValueProp() {
                                 </Text>
                             </Stack>
 
-                            <Text size="xs" tt="uppercase" fw={300} td="underline">
-                                <Anchor size="xs" href="https://app.kasuwa.com/login" target="_blank">
+                            <Text size="xs" tt="uppercase" fw={300}>
+                                <Anchor size="xs" href="https://app.kasuwa.com/login" target="_blank" underline="hover">
                                     Get Started
                                 </Anchor>
                             </Text>

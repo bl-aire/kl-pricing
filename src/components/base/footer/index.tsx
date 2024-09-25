@@ -13,6 +13,10 @@ export default function Footer() {
     const theme = useMantineTheme();
     const break_sm = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
 
+    function getStarted(){
+        window.location.href='https://app.kasuwa.com/register';
+    }
+
     return (
         <footer className={styles.footer}>
             <Grid gutter={break_sm ? "xl" : "md"} justify="space-between">
@@ -82,8 +86,8 @@ export default function Footer() {
                             <li className={styles.footer__col__list__item}>
                                 <Link to="/legal-policies">Legal Policies</Link>
                             </li>
-                            <li className={styles.footer__col__list__item}>
-                                <Link to="/register">Get an Account</Link>
+                            <li className={styles.footer__col__list__item} onClick={getStarted}>
+                                Get an Account
                             </li>
                         </ul>
                     </div>
