@@ -13,8 +13,8 @@ export default function Footer() {
     const theme = useMantineTheme();
     const break_sm = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
 
-    function getStarted(){
-        window.location.href='https://app.kasuwa.com/register';
+    function getStarted() {
+        window.location.href = 'https://app.kasuwa.com/register';
     }
 
     return (
