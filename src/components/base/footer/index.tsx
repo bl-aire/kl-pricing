@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useMediaQuery } from "@mantine/hooks";
 import { FaLinkedinIn, FaInstagram, FaXTwitter, FaFacebookF } from "react-icons/fa6";
-import { Title, Grid, Group, Box, Text, useMantineTheme, Divider } from "@mantine/core";
+import { Title, Grid, Group, Box, Text, useMantineTheme, Divider, Anchor } from "@mantine/core";
 
 import styles from "./footer.module.scss";
 import brandImg from "@/assets/logo-white.svg";
@@ -13,36 +13,48 @@ export default function Footer() {
     const theme = useMantineTheme();
     const break_sm = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
 
+    function getStarted() {
+        window.location.href = 'https://app.kasuwa.com/register';
+    }
+
     return (
         <footer className={styles.footer}>
             <Grid gutter={break_sm ? "xl" : "md"} justify="space-between">
-                <Grid.Col span={{base: 12, md: 4, lg: 4}}>
+                <Grid.Col span={{ base: 12, md: 4, lg: 4 }}>
                     <div className={styles.footer__col}>
                         {/* <Title order={3} fw={600} c="white">Stay Connected!</Title> */}
                         <img className={styles.footer__col__brand} src={brandImg} alt="Kasuwa" />
-                        
+
                         <Text size="sm" fw={300} c="white">
-                            Stay connected with us on social media for the latest 
+                            Stay connected with us on social media for the latest
                             updates, insights, and exclusive content. Follow us,
                             join conversation and never miss out on what's happening in Kasuwa today!
                         </Text>
                         <Group mt="md">
                             <Box className={styles.footer__col__icon}>
-                                <FaLinkedinIn />
+                                <Anchor size="sm" href="https://www.linkedin.com/company/agriarche-limited/" target="blank">
+                                    <FaLinkedinIn />
+                                </Anchor>
                             </Box>
                             <Box className={styles.footer__col__icon}>
-                                <FaInstagram />
+                                <Anchor size="sm" href="https://www.instagram.com/agriarche/" target="blank">
+                                    <FaInstagram />
+                                </Anchor>
                             </Box>
                             <Box className={styles.footer__col__icon}>
-                                <FaXTwitter />
+                                <Anchor size="sm" href="https://x.com/agriarche" target="blank">
+                                    <FaXTwitter />
+                                </Anchor>
                             </Box>
                             <Box className={styles.footer__col__icon}>
-                                <FaFacebookF />
+                                <Anchor size="sm" href="https://web.facebook.com/agriarchelimited?mibextid=ZbWKwL&_rdc=1&_rdr" target="_blank">
+                                    <FaFacebookF />
+                                </Anchor>
                             </Box>
                         </Group>
                     </div>
                 </Grid.Col>
-                <Grid.Col span={{base: 12, md: 4, lg: 4}}>
+                <Grid.Col span={{ base: 12, md: 4, lg: 4 }}>
                     <div className={styles.footer__col}>
                         <Title order={3} fw={600} c="white">Contact Us!</Title>
                         <ul className={styles.footer__col__list}>
@@ -60,11 +72,11 @@ export default function Footer() {
                         </ul>
                     </div>
                 </Grid.Col>
-                
-                <Grid.Col span={{base: 12, md: 2, lg: 2}}>
+
+                <Grid.Col span={{ base: 12, md: 2, lg: 2 }}>
                     <div className={styles.footer__col}>
                         <Title ta="right" order={3} fw={600} c="white">Quick Links</Title>
-                        <ul className={styles.footer__col__list} style={{alignItems: "flex-end"}}>
+                        <ul className={styles.footer__col__list} style={{ alignItems: "flex-end" }}>
                             <li className={styles.footer__col__list__item}>
                                 <Link to="/">Home</Link>
                             </li>
@@ -74,8 +86,8 @@ export default function Footer() {
                             <li className={styles.footer__col__list__item}>
                                 <Link to="/legal-policies">Legal Policies</Link>
                             </li>
-                            <li className={styles.footer__col__list__item}>
-                                <Link to="/register">Get an Account</Link>
+                            <li className={styles.footer__col__list__item} onClick={getStarted}>
+                                Get an Account
                             </li>
                         </ul>
                     </div>
@@ -93,8 +105,8 @@ export default function Footer() {
                 </Text>
             </Group>
 
-            <img className={styles.footer__bg_l} src={loginBgLeft} alt="leaf"/>
-            <img className={styles.footer__bg_r} src={loginBgRight} alt="leaf"/>
+            <img className={styles.footer__bg_l} src={loginBgLeft} alt="leaf" />
+            <img className={styles.footer__bg_r} src={loginBgRight} alt="leaf" />
         </footer>
     )
 }

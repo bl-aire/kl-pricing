@@ -1,4 +1,4 @@
-import { Grid, Group, Stack, Title, Text, Button } from "@mantine/core";
+import { Grid, Group, Stack, Title, Text, Button, Anchor } from "@mantine/core";
 import { PiChatsFill, PiPhoneTransferFill, PiBuildingsFill } from "react-icons/pi";
 
 import styles from "./contact.module.scss";
@@ -8,7 +8,7 @@ export default function Contact() {
         <section className={styles.info}>
             <article className={styles.info__paper}>
                 <Grid gutter="md">
-                    <Grid.Col span={{base: 12, md: 6, lg: 4}}>
+                    <Grid.Col span={{ base: 12, md: 6, lg: 4 }}>
                         <Group wrap="nowrap">
                             <div className={styles.info__paper__icon}>
                                 <PiPhoneTransferFill size={24} />
@@ -21,7 +21,7 @@ export default function Contact() {
 
                                 <Stack gap={12}>
                                     <Text size="sm" fw={300}>
-                                        Interested in Kasuwa? Talk to a 
+                                        Interested in Kasuwa? Talk to a
                                         member of our sales team.
                                     </Text>
                                     <Text size="sm" td="underline" c="orange.5" fw={400}>
@@ -34,7 +34,7 @@ export default function Contact() {
                             </Stack>
                         </Group>
                     </Grid.Col>
-                    <Grid.Col span={{base: 12, md: 6, lg: 4}}>
+                    <Grid.Col span={{ base: 12, md: 6, lg: 4 }}>
                         <Group wrap="nowrap">
                             <div className={styles.info__paper__icon}>
                                 <PiChatsFill size={24} />
@@ -47,7 +47,7 @@ export default function Contact() {
 
                                 <Stack gap={12}>
                                     <Text size="sm" fw={300}>
-                                        Call, send email, or chat with support 
+                                        Call, send email, or chat with support
                                         agents anytime, anyday.
                                     </Text>
                                     <Text c="orange.5" fw={400} size="sm">
@@ -60,7 +60,7 @@ export default function Contact() {
                             </Stack>
                         </Group>
                     </Grid.Col>
-                    <Grid.Col span={{base: 12, md: 6, lg: 4}}>
+                    <Grid.Col span={{ base: 12, md: 6, lg: 4 }}>
                         <Group wrap="nowrap">
                             <div className={styles.info__paper__icon}>
                                 <PiBuildingsFill size={24} />
@@ -76,8 +76,10 @@ export default function Contact() {
                                         Wuse, Abuja 904101, Fedreal Capital Territory,
                                         Nigeria
                                     </Text>
-                                    <Button fz={11} variant="light" tt="uppercase" fw={500} color="orange.5">
-                                        Chat on WhatsApp
+                                    <Button fz={11} variant="light" tt="capitalize" fw={500} color="orange.5">
+                                        <Anchor size="sm" href="https://wa.me/+2349024569374" target="blank">
+                                            Chat on WhatsApp
+                                        </Anchor>
                                     </Button>
                                 </Stack>
                             </Stack>
