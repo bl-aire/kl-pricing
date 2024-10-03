@@ -24,6 +24,11 @@ export default function Form() {
 
     const handleSubmit = (values: typeof form.values) => {
         console.log(values);
+
+        const email = "tradekasuwa@agriarche.com";
+        const subject =`Inquiry about....from ${values.fullName} with phone number ${values.phoneNumber}`;
+        const body = values.message;
+        window.open(`mailto:${email}?subject=${subject}&body=${body}`);
     }
     
     return (

@@ -20,7 +20,7 @@ export default function Onboarding() {
                     <Title order={1} fw={600} c="#364330">
                         Super Simple to Get Started.
                     </Title>
-                    <Text fw={300} size="sm" w="30%" ta="center" c="gray.7">
+                    <Text fw={300} size="sm" w="50%" ta="center" c="gray.7">
                         Experiencing the blend of Agriculture, Technology, and 
                         Finance is as simple as following the steps below 
                     </Text>
@@ -82,10 +82,10 @@ export default function Onboarding() {
 
             <article className={styles.gs__security}>
                 <Stack align="center">
-                    <Title order={1} fw={600} c="#364330">
+                    <Title order={1} fw={600} c="#364330" ta="center">
                         Safety + Compliance = <span>Kasuwa</span>
                     </Title>
-                    <Text fw={300} size="sm" w="30%" ta="center" c="gray.7">
+                    <Text fw={300} size="sm" w="50%" ta="center" c="gray.7">
                         Ensure a safe and compliant work environment with our 
                         comprehensive solution, designed to meet regulatory standards 
                         and protect your transactions and data. 

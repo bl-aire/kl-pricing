@@ -1,10 +1,10 @@
 import { useRef } from 'react';
 import { Carousel } from '@mantine/carousel';
 import Autoplay from 'embla-carousel-autoplay';
-import { useNavigate } from 'react-router-dom';
+//import { useNavigate } from 'react-router-dom';
 import { TbMessageShare } from "react-icons/tb";
 import { IoLocationOutline } from "react-icons/io5";
-import { Group, Title, Text, Image, Box, Button, Stack, Paper, useMantineTheme } from "@mantine/core";
+import { Group, Title, Text, Image, Box, Button, Stack, Paper, useMantineTheme, Anchor } from "@mantine/core";
 
 import styles from "./orders.module.scss";
 
@@ -12,7 +12,7 @@ import { mediaUrl } from '@/helpers/request';
 import { useGetPublicOrders } from '@/services/orders';
 
 export default function Orders() {
-    const navigate = useNavigate();
+    //const navigate = useNavigate();
     const autoplay = useRef(Autoplay({ delay: 2000 }));
 
     const theme = useMantineTheme();
@@ -45,9 +45,9 @@ export default function Orders() {
     }
 
     const _renderData = () => {
-        if(status === "pending") return _renderLoader();
+        if (status === "pending") return _renderLoader();
         else return (
-            <Carousel 
+            <Carousel
                 loop
                 align="start"
                 withIndicators={true}
@@ -74,14 +74,14 @@ export default function Orders() {
                                         <Text size="xs" fw={300}>{el.state}</Text>
                                     </Group>
                                     <Text size="xs" fw={300}>
-                                        {el.quantity.toLocaleString("en", {minimumFractionDigits: 2})} MT
+                                        {el.quantity.toLocaleString("en", { minimumFractionDigits: 2 })} MT
                                     </Text>
-                                    {/* <Group gap="xs">
+                                    {/*<Group gap="xs">
                                         <PiUsersThree color={theme.colors.orange[8]} />
                                         <Text size="xs" fw={300}>
                                             {Math.floor(Math.random() * 9) + 1} sellers watching
                                         </Text>
-                                    </Group> */}
+                                    </Group>*/}
                                 </Group>
                             </Stack>
 
@@ -90,39 +90,42 @@ export default function Orders() {
                                     <Group justify="space-between">
                                         <Text size="sm" fw={500}>{el.commodityName}</Text>
                                         <Text size="sm" fw={500}>
-                                            ₦{el.price.toLocaleString("en", {minimumFractionDigits: 2})}
+                                            ₦{el.price.toLocaleString("en", { minimumFractionDigits: 2 })}
                                         </Text>
                                     </Group>
                                     <Text size="xs" fw={300} lh={1.7} c="gray.7" lineClamp={2}>
-                                        {el.specification}. The duration for this order is {el.duration}, after which 
+                                        {el.specification}. The duration for this order is {el.duration}, after which
                                         the order will be closed.
                                     </Text>
                                 </Stack>
 
                                 <Group>
-                                    <Button 
-                                        fz={11} 
+                                    <Button
+                                        fz={11}
                                         size="md"
-                                        color="orange.5"  
-                                        fw={500} 
+                                        color="orange.5"
+                                        fw={500}
                                         flex={1}
                                         tt="uppercase"
                                         variant='filled'
-                                        onClick={() => navigate(`/login?redirect=dashboard/orders/open&tradeId=${el.id}&action=preview`)}
+                                        td="none"
+                                        className='orderLink'
                                     >
-                                        Accept Trade
+                                        <Anchor c="white" size="xs" href="https://app.kasuwa.com/login?redirect=dashboard/orders/open&tradeId=${el.id}&action=preview" target="_blank">
+                                            Accept Trade
+                                        </Anchor>
                                     </Button>
 
-                                    <Button 
-                                        fz={11} 
+                                    <Button
+                                        fz={11}
                                         size="md"
-                                        color="orange.5"  
-                                        fw={500} 
+                                        color="orange.5"
+                                        fw={500}
                                         flex={0.8}
                                         tt="uppercase"
                                         variant='light'
                                         rightSection={<TbMessageShare size={16} />}
-                                        onClick={() => null}
+                                        onClick={() => { window.location.href = 'mailto:tradekasuwa@agriarche.com?subject=Order#KAS-$commodityName-$price' }}
                                     >
                                         Share
                                     </Button>
@@ -147,7 +150,7 @@ export default function Orders() {
                 </Text>
             </Stack>
 
-           {_renderData()}
+            {_renderData()}
         </section>
     )
 }
