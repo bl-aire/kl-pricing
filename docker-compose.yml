@@ -1,0 +1,8 @@
+version: "3.3"  # optional since v1.27.0
+services:
+  web:
+    build: .
+    ports:
+      - "3005:80"
+    volumes:
+      - /opt/kasuwa-landing-ui:/var/www/html/

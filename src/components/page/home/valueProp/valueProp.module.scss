@@ -1,0 +1,54 @@
+.vp{
+    padding: 3rem 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    @include smaller-than($mantine-breakpoint-xl){
+        padding: 3rem 4rem;
+    }
+
+    @include smaller-than($mantine-breakpoint-sm){
+        padding: 3rem 2rem;
+    }
+
+    @include smaller-than($mantine-breakpoint-xs){
+        h1 {
+            font-size: 1.8rem !important;
+            text-align: left !important;
+        }
+
+        p{
+            text-align: left !important;
+            width: 100% !important;
+        }
+    }
+
+    &__paper{
+        border-radius: 0;
+        border-radius: 0.5rem;
+        padding: 2rem;
+        position: relative;
+        z-index: 2;
+        //overflow: hidden;
+
+        &__icon{
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 50%;
+            background-color: var(--mantine-color-orange-1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    &__span{
+        color: var(--mantine-color-orange-5);
+    }
+}
+
+.bordered{
+    background-color: #fffdfb;
+    //border: 1px solid #f1902512;
+}

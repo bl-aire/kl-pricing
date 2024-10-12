@@ -1,0 +1,20 @@
+.info{
+    padding: 2rem 6rem;
+    
+    &__paper{
+        background-color: #fffdfb;
+        padding: 4rem 2rem;
+        border-radius: 0.5rem;
+        border: 1px solid #f1902512;
+
+        &__icon{
+            width: 4rem;
+            height: 4rem;
+            background-color: var(--mantine-color-orange-1);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

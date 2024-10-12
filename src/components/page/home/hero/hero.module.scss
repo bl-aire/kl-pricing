@@ -1,0 +1,158 @@
+.hero{
+    min-height: 85.5vh;
+    display: flex;
+    gap: 6rem;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 6rem;
+    position: relative;
+    overflow: hidden;
+
+    @include smaller-than($mantine-breakpoint-xl){
+        padding: 1rem 4rem;
+    }
+
+    @include smaller-than($mantine-breakpoint-lg){
+        padding: 4rem;
+        flex-direction: column;
+    }
+
+    @include smaller-than($mantine-breakpoint-sm){
+        padding: 4rem 2rem;
+    }
+
+    &__box{
+        width: min(32rem, 100%);
+
+        &__stack{
+            @include smaller-than($mantine-breakpoint-lg){
+                text-align: center;
+            }
+
+            @include smaller-than($mantine-breakpoint-sm){
+                text-align: left;
+            }
+
+            h1{
+                @include smaller-than($mantine-breakpoint-sm){
+                    font-size: 2rem !important;
+                }
+            }
+
+            p{
+                width: 88%;
+
+                @include smaller-than($mantine-breakpoint-lg){
+                    width: 100%;
+                }
+            }
+            
+            &__dowloadLinks{
+                @include smaller-than($mantine-breakpoint-lg){
+                    margin:0 auto;
+                }
+    
+                @include smaller-than($mantine-breakpoint-sm){
+                    
+                }
+            }
+
+        }
+
+        &__cta{
+            @include smaller-than($mantine-breakpoint-lg){
+                text-align: center;
+            }
+
+            @include smaller-than($mantine-breakpoint-xs){
+                text-align: left;
+            }
+        }
+
+        &__paper{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.5rem;
+
+            @include smaller-than($mantine-breakpoint-lg){
+                margin: 0 auto;
+            }
+
+            @include smaller-than($mantine-breakpoint-xs){
+                width: 100% !important;
+            }
+    
+            &__prefix{
+                padding: 0.6rem;
+                background-color: #f5f5f5;
+                border-radius: 0.3rem;
+
+                @include smaller-than($mantine-breakpoint-xs){
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &__img{
+        width: 38rem;
+        height: 38rem;
+        object-fit: contain;
+
+        @include smaller-than($mantine-breakpoint-lg){
+            width: 35rem;
+            height: 35rem;
+        }
+
+        @include smaller-than($mantine-breakpoint-sm){
+            width: 28rem;
+            height: 28rem;
+        }
+
+        @include smaller-than($mantine-breakpoint-xs){
+            width: 20rem;
+            height: 20rem;
+        }
+    }
+
+    &__bg_l{
+        width: 18rem;
+        height: 18rem;
+        position: absolute;
+        left: -7rem;
+        object-fit: contain;
+        top: -1rem;
+        z-index: -1;
+        opacity: .85;
+
+        @include smaller-than($mantine-breakpoint-lg){
+            width: 22rem;
+            height: 22rem;
+        }
+
+        @include smaller-than($mantine-breakpoint-md){
+            display: none;
+        }
+    }
+
+    &__bg_r{
+        width: 18rem;
+        height: 18rem;
+        position: absolute;
+        right: -5rem;
+        object-fit: contain;
+        bottom: -2rem;
+        z-index: -1;
+        opacity: .85;
+
+        @include smaller-than($mantine-breakpoint-lg){
+            width: 22rem;
+            height: 22rem;
+        }
+
+        @include smaller-than($mantine-breakpoint-md){
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,65 @@
+.header{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #f6f6f6;
+}
+
+.box{
+    padding: 0rem 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #f6f6f6;
+
+    @include smaller-than($mantine-breakpoint-xl){
+        padding: 0rem 4rem;
+    }
+
+    @include smaller-than($mantine-breakpoint-lg){
+        padding: 0rem 4rem;
+    }
+
+    @include smaller-than($mantine-breakpoint-sm){
+        padding: 1rem 2rem;
+    }
+
+    &__logo{
+        width: 9rem;
+        height: 2.5rem;
+        object-fit: cover;
+        //opacity: 0;
+
+        @include smaller-than($mantine-breakpoint-xs){
+            width: 8rem;
+        }
+    }
+
+    &__list{
+        display: flex;
+        align-items: center;
+        list-style: none;
+        gap: 2rem;
+
+        @include smaller-than($mantine-breakpoint-md){
+            display: none;
+        }
+
+        &__item{
+            a{
+                font-size: 0.85rem;
+                font-weight: 300;
+                color: #364330;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.isActve{
+    color: var(--mantine-color-orange-4);
+    font-weight: 500;
+}
+
+.isPending{
+    color: #364330;
+}

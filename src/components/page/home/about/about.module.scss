@@ -1,0 +1,134 @@
+.about{
+    display: flex;
+    flex-direction: column;
+
+    &__banner{
+        padding: 1.5rem 6rem;
+        background-color: var(--mantine-color-orange-0);
+
+        @include smaller-than($mantine-breakpoint-xl){
+            padding: 1.5rem 4rem;
+        }
+
+        @include smaller-than($mantine-breakpoint-sm){
+            padding: 1rem 2rem;
+        }
+
+        &__img{
+            width: 10rem;
+            height: 2.5rem;
+            object-fit: contain;
+
+            @include smaller-than($mantine-breakpoint-sm){
+                width: 8rem;
+                height: 2rem;
+            }
+        }
+    }
+
+    &__content{
+        padding: 4rem 6rem;
+        padding-bottom: 0;
+        width: min(46rem, 100%);
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+
+        @include smaller-than($mantine-breakpoint-xl){
+            padding: 4rem;
+            padding-bottom: 0;
+        }
+
+        @include smaller-than($mantine-breakpoint-sm){
+            padding: 2rem;
+        }
+    }
+
+    &__info{
+        padding: 6rem;
+
+        @include smaller-than($mantine-breakpoint-xl){
+            padding: 6rem 4rem;
+        }
+
+        @include smaller-than($mantine-breakpoint-md){
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+        }
+
+        @include smaller-than($mantine-breakpoint-sm){
+            padding: 4rem 2rem;
+            gap: 2rem;
+        }
+
+        &__col{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8rem;
+
+            @include smaller-than($mantine-breakpoint-md){
+                gap: 2rem;
+                flex-direction: column;
+            }
+
+            &:nth-child(2) &{
+                &__img{
+                    @include smaller-than($mantine-breakpoint-md){
+                        order: 1;
+                    }
+                } 
+
+                &__box{
+                    @include smaller-than($mantine-breakpoint-md){
+                        order: 2;
+                    }
+                }
+            }
+
+            &__img{
+                width: 38rem;
+                height: 38rem;
+                object-fit: contain;
+                background-color: #fffdfb;
+                padding: 2rem;
+                border-radius: 0.2rem;
+                border: 1px solid #f1902512;
+
+                @include smaller-than($mantine-breakpoint-xl){
+                    width: 35rem;
+                    height: 35rem;
+                }
+
+                @include smaller-than($mantine-breakpoint-lg){
+                    width: 30rem;
+                    height: 30rem;
+                }
+
+                @include smaller-than($mantine-breakpoint-md){
+                    width: 38rem;
+                    height: 38rem;
+                }
+
+                @include smaller-than($mantine-breakpoint-xs){
+                    width: 100%;
+                    height: 25rem;
+                    object-fit: cover;
+                }
+            }
+
+            &__box{
+                width: min(32rem, 100%);
+
+                @include smaller-than($mantine-breakpoint-xs){
+                    h1 {
+                        font-size: 1.8rem !important;
+                    }
+                }
+            }
+        }
+    }
+}

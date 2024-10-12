@@ -1,0 +1,11 @@
+.form{
+    padding: 4rem 6rem;
+
+    &__box{
+        width: min(30rem, 100%);
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
