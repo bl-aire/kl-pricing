@@ -83,7 +83,7 @@ export default function PricingIndex() {
         <div className={styles.container}>
             <Box display="block" className={styles.label}>
                 <Text size="xs" fw={400} c="white">
-                    Live Market Prices
+                    Market Prices
                 </Text>
             </Box>
             {_renderData()}            
