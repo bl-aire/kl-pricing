@@ -14,7 +14,7 @@ export default function Hero() {
             <Box className={styles.hero__box}>
                 <Stack gap={45}>
                     <Stack className={styles.hero__box__stack} gap="md">
-                        <Title fz={45} fw={600} c="#364330">
+                        <Title size={45} fw={600} c="#364330">
                             The Future of Agriculture is Here.
                         </Title>
                         <Text size="sm" fw={300} c="gray.7" component="p" lh={1.7}>
@@ -23,11 +23,11 @@ export default function Hero() {
                             financial tools to empower producers.
                         </Text>
                         <Group gap="sm" className={styles.hero__box__stack__dowloadLinks}>
-                            <a href="https://play.google/com/store/apps/details?id=com.kasuwa_v2" target="_blank">
-                                <Image w={110} h={40} src={googlePlay} alt="flag" fit="contain" />
+                            <a href="https://play.google.com/store/apps/details?id=com.kasuwa_v2" target="_blank">
+                                <Image w={110} h={40} src={googlePlay} alt="Google Play Store logo" fit="contain" />
                             </a>
                             {/* <a href="" target="_blank">
-                                <Image w={100} h={40} src={appleStore} alt="flag" fit="contain" />
+                                <Image w={100} h={40} src={appleStore} alt="Apple App Store logo" fit="contain" />
                             </a> */}
                         </Group>
                     </Stack>
