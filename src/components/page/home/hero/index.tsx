@@ -6,7 +6,7 @@ import heroImg from "@/assets/hero.webp";
 import loginBgLeft from "@/assets/login-bg-l.svg";
 import loginBgRight from "@/assets/login-bg-r.svg";
 import googlePlay from "@/assets/images/google-play.svg";
-import appleStore from "@/assets/images/apple-store.svg";
+//import appleStore from "@/assets/images/apple-store.svg";
 
 export default function Hero() {
     return (
@@ -26,9 +26,9 @@ export default function Hero() {
                             <a href="https://play.google/com/store/apps/details?id=com.kasuwa_v2" target="_blank">
                                 <Image w={110} h={40} src={googlePlay} alt="flag" fit="contain" />
                             </a>
-                            <a href="" target="_blank">
+                            {/*<a href="" target="_blank">
                                 <Image w={100} h={40} src={appleStore} alt="flag" fit="contain" />
-                            </a>
+                            </a>*/}
                         </Group>
                     </Stack>
                 </Stack>

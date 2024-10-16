@@ -81,7 +81,7 @@ export default function LegalPolicies() {
 
                     <Paper className={styles.legal__paper}>
                         <Stack gap="xl">
-                            {/* Introduction */}
+                            {/* Introduction */} 
                             <Stack>
                                 <Title order={1} fw={600}>
                                     Terms of Service
