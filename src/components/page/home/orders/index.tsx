@@ -111,7 +111,7 @@ export default function Orders() {
                                         td="none"
                                         className='orderLink'
                                     >
-                                        <Anchor c="white" size="xs" href="https://app.kasuwa.com/login?redirect=dashboard/orders/open&tradeId=${el.id}&action=preview" target="_blank">
+                                        <Anchor c="white" size="xs" href={`https://app.kasuwa.com/login?redirect=dashboard/orders/open&tradeId=${el.id}&action=preview`} target="_blank">
                                             Accept Trade
                                         </Anchor>
                                     </Button>

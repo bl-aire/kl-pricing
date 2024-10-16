@@ -14,7 +14,7 @@ export default function Header() {
     const break_md = useMediaQuery(`(min-width: ${theme.breakpoints.md})`);
 
     function getStarted(){
-        window.location.href='https://app.kasuwa.com/register';
+        window.open("https://app.kasuwa.com/register", "_blank")
     }
 
     return (
@@ -23,7 +23,7 @@ export default function Header() {
 
             <Box className={styles.box}>
                 <Link to="/">
-                    <img className={styles.box__logo} src={logo} alt="Kasuwa" />
+                    <img className={styles.box__logo} src={logo} alt="Kasuwa logo" />
                 </Link>
 
                 <div>
