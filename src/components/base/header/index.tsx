@@ -13,7 +13,7 @@ export default function Header() {
     const break_md = useMediaQuery(`(min-width: ${theme.breakpoints.md})`);
 
     function getStarted(){
-        window.location.href='https://app.kasuwa.com/register';
+        window.location.href='https://app.kasuwa.com/login';
     }
 
     return (
