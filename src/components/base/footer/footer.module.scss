@@ -50,7 +50,8 @@
             flex-direction: column;
             gap: 1rem;
             padding: 0;
-            list-style: inside;
+            list-style-type: none;
+            //list-style: inside;
 
             &__item{
                 font-size: var(--mantine-font-size-sm);

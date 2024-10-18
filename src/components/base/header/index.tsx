@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useMediaQuery, useDisclosure } from "@mantine/hooks";
 import { Box, Button, Burger, useMantineTheme, Menu } from "@mantine/core";
+
 import styles from './header.module.scss';
 import PricingIndex from '@/components/ui/pricingIndex';
 

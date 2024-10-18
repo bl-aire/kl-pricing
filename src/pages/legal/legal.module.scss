@@ -1,15 +1,16 @@
 .legal{
     display: flex;
     flex-direction: column;
-    //position: relative;
     gap: 4rem;
+    padding: 1rem 4rem;
 
     &__paper{
         width: min(50vw, 100%);
         margin: 1rem auto 4rem auto;
 
         @include smaller-than($mantine-breakpoint-sm){
-            width: min(70vw, 100%);
+            //width: min(70vw, 100%);
+            width: min(80vw, 100%);
         }
     }
 
@@ -17,7 +18,6 @@
         position: sticky;
         top: 0;
         left: 6rem;
-        // border: 1px solid;
         width: 16rem;
         padding-top: 2rem;
 
