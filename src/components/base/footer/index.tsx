@@ -75,8 +75,8 @@ export default function Footer() {
 
                 <Grid.Col span={{ base: 12, md: 2, lg: 2 }}>
                     <div className={styles.footer__col}>
-                        <Title ta="right" order={3} fw={600} c="white">Quick Links</Title>
-                        <ul className={styles.footer__col__list} style={{ alignItems: "flex-end" }}>
+                        <Title ta="left" order={3} fw={600} c="white">Quick Links</Title>
+                        <ul className={styles.footer__col__list} style={{ alignItems: "flex-start" }}>
                             <li className={styles.footer__col__list__item}>
                                 <Link to="/">Home</Link>
                             </li>

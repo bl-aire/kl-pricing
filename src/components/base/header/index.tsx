@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useMediaQuery, useDisclosure } from "@mantine/hooks";
 import { Box, Button, Burger, useMantineTheme, Menu } from "@mantine/core";
+
 import styles from './header.module.scss';
 import PricingIndex from '@/components/ui/pricingIndex';
 
@@ -13,7 +14,7 @@ export default function Header() {
     const break_md = useMediaQuery(`(min-width: ${theme.breakpoints.md})`);
 
     function getStarted(){
-        window.location.href='https://app.kasuwa.com/login';
+        window.open(`https://app.kasuwa.com/login`, "_blank");
     }
 
     return (
