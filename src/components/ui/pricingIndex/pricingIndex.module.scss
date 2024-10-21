@@ -5,9 +5,12 @@
 }
 
 .label{
-    width: 9rem;
-    padding: 1rem;
+    width: 8.5rem;
+    //padding:1rem;
+    //width:9rem;
+    padding: 1.5rem;
     background-color: var(--mantine-color-orange-5);
+    height: inherit !important;
 }
 
 .carousel{
