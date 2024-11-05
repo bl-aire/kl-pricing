@@ -1,10 +1,10 @@
 import { useRef } from 'react';
 import { Carousel } from '@mantine/carousel';
 import Autoplay from 'embla-carousel-autoplay';
-//import { useNavigate } from 'react-router-dom';
 import { TbMessageShare } from "react-icons/tb";
 import { IoLocationOutline } from "react-icons/io5";
 import { Group, Title, Text, Image, Box, Button, Stack, Paper, useMantineTheme, Anchor } from "@mantine/core";
+import { useScrollIntoView } from '@mantine/hooks';
 
 import styles from "./orders.module.scss";
 
@@ -12,12 +12,15 @@ import { mediaUrl } from '@/helpers/request';
 import { useGetPublicOrders } from '@/services/orders';
 
 export default function Orders() {
-    //const navigate = useNavigate();
     const autoplay = useRef(Autoplay({ delay: 2000 }));
 
     const theme = useMantineTheme();
 
     const { data, status } = useGetPublicOrders();
+
+    const { scrollIntoView, targetRef } = useScrollIntoView<HTMLDivElement>({
+        offset: 60,
+      });
 
     const _renderLoader = () => {
         return (
@@ -63,7 +66,7 @@ export default function Orders() {
             >
                 {data?.map((el) => (
                     <Carousel.Slide key={el.id} p="xs">
-                        <Paper className={styles.orders__slide}>
+                        <Paper className={styles.orders__slide} ref={targetRef}>
                             <Stack gap="md">
                                 <Box className={styles.orders__slide__img}>
                                     <Image src={`${mediaUrl}${el.commodityImage}`} alt="comm" w="100%" h="100%" />
@@ -111,7 +114,7 @@ export default function Orders() {
                                         td="none"
                                         className='orderLink'
                                     >
-                                        <Anchor c="white" size="xs" href={`https://app.kasuwa.com/login?redirect=dashboard/orders/open&tradeId=${el.id}&action=preview`} target="_blank">
+                                        <Anchor c="white" size='xs' href={`https://app.kasuwa.com/login?redirect=dashboard/orders/open&tradeId=${el.id}&action=preview`} target="_blank">
                                             Accept Trade
                                         </Anchor>
                                     </Button>
@@ -149,6 +152,24 @@ export default function Orders() {
                     local and internation buyers.
                 </Text>
             </Stack>
+            <Stack>
+                <Group justify='space-between' >
+                    <Anchor 
+                        c='gray.7'
+                        onClick={() =>
+                            scrollIntoView({
+                              alignment: 'center',
+                            })
+                          }
+                    >
+                        Trending Orders
+                    </Anchor>
+                    <Anchor c='gray.7'>
+                        View All Orders
+                    </Anchor>
+                </Group>
+            </Stack>
+
 
             {_renderData()}
         </section>

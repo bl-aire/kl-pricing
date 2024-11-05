@@ -13,8 +13,8 @@ export default function Header() {
     const theme = useMantineTheme();
     const break_md = useMediaQuery(`(min-width: ${theme.breakpoints.md})`);
 
-    function getStarted(){
-        window.location.href='https://app.kasuwa.com/login';
+    function getStarted() {
+        window.open('https://app.kasuwa.com/login', '_blank');
     }
 
     return (
@@ -87,6 +87,20 @@ export default function Header() {
                             <Menu.Item component={Link} to="/legal-policies">
                                 Legal Policies
                             </Menu.Item>
+                            <Menu.Item>
+                                <Button
+                                    size="sm"
+                                    fz={11}
+                                    fw={500}
+                                    color="orange.5"
+                                    tt="uppercase"
+                                    onClick={getStarted}
+                                    fullWidth
+                                    
+                                >
+                                    Get Started
+                                </Button>
+                                </Menu.Item>
                         </Menu.Dropdown>
                     </Menu>
                 </div>
