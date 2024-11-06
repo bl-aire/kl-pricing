@@ -3,8 +3,7 @@ import { Carousel } from '@mantine/carousel';
 import Autoplay from 'embla-carousel-autoplay';
 import { TbMessageShare } from "react-icons/tb";
 import { IoLocationOutline } from "react-icons/io5";
-import { Group, Title, Text, Image, Box, Button, Stack, Paper, useMantineTheme, Anchor } from "@mantine/core";
-import { useScrollIntoView } from '@mantine/hooks';
+import { Flex, Group, Title, Text, Image, Box, Button, Stack, Paper, useMantineTheme, Anchor } from "@mantine/core";
 
 import styles from "./orders.module.scss";
 
@@ -17,10 +16,6 @@ export default function Orders() {
     const theme = useMantineTheme();
 
     const { data, status } = useGetPublicOrders();
-
-    const { scrollIntoView, targetRef } = useScrollIntoView<HTMLDivElement>({
-        offset: 60,
-      });
 
     const _renderLoader = () => {
         return (
@@ -66,7 +61,7 @@ export default function Orders() {
             >
                 {data?.map((el) => (
                     <Carousel.Slide key={el.id} p="xs">
-                        <Paper className={styles.orders__slide} ref={targetRef}>
+                        <Paper className={styles.orders__slide} >
                             <Stack gap="md">
                                 <Box className={styles.orders__slide__img}>
                                     <Image src={`${mediaUrl}${el.commodityImage}`} alt="comm" w="100%" h="100%" />
@@ -79,12 +74,6 @@ export default function Orders() {
                                     <Text size="xs" fw={300}>
                                         {el.quantity.toLocaleString("en", { minimumFractionDigits: 2 })} MT
                                     </Text>
-                                    {/*<Group gap="xs">
-                                        <PiUsersThree color={theme.colors.orange[8]} />
-                                        <Text size="xs" fw={300}>
-                                            {Math.floor(Math.random() * 9) + 1} sellers watching
-                                        </Text>
-                                    </Group>*/}
                                 </Group>
                             </Stack>
 
@@ -152,25 +141,17 @@ export default function Orders() {
                     local and internation buyers.
                 </Text>
             </Stack>
-            <Stack>
-                <Group justify='space-between' >
-                    <Anchor 
-                        c='gray.7'
-                        onClick={() =>
-                            scrollIntoView({
-                              alignment: 'center',
-                            })
-                          }
-                    >
-                        Trending Orders
-                    </Anchor>
-                    <Anchor c='gray.7'>
-                        View All Orders
-                    </Anchor>
-                </Group>
-            </Stack>
-
-
+            <Flex justify='space-between'  align="flex-start" >
+                <Stack>
+                    <Title fw={500} c="#364330" order={4}>Trending Orders</Title>
+                    <Text size="sm" fw={300} c="gray.7">
+                        Stay updated with the latest orders! <br /> Discover in-demand products on Kasuwa.
+                    </Text>
+                </Stack>
+                <Anchor c='gray.7'>
+                    View All Orders
+                </Anchor>
+            </Flex>
             {_renderData()}
         </section>
     )
