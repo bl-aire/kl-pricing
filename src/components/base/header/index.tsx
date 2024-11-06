@@ -13,8 +13,8 @@ export default function Header() {
     const theme = useMantineTheme();
     const break_md = useMediaQuery(`(min-width: ${theme.breakpoints.md})`);
 
-    function getStarted() {
-        window.open('https://app.kasuwa.com/login', '_blank');
+    function getStarted(){
+        window.open(`https://app.kasuwa.com/login`, "_blank");
     }
 
     return (
