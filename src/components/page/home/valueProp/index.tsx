@@ -67,7 +67,14 @@ export default function ValueProp() {
                                     Get Started
                                 </Anchor>
                             </Text>
+
+                            <div className={styles.ribbon}>
+                                <span>Coming Soon!</span>
+                            </div>
                         </Stack>
+
+
+
                     </Paper>
                 </Grid.Col>
                 <Grid.Col span={{ base: 12, md: 6, lg: 4 }}>
