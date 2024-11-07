@@ -14,7 +14,7 @@ export default function Footer() {
     const break_sm = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
 
     function getStarted() {
-        window.location.href = 'https://app.kasuwa.com/register';
+        window.open('https://app.kasuwa.com/login', '_blank');
     }
 
     return (
@@ -86,8 +86,10 @@ export default function Footer() {
                             <li className={styles.footer__col__list__item}>
                                 <Link to="/legal-policies">Legal Policies</Link>
                             </li>
-                            <li className={styles.footer__col__list__item} onClick={getStarted}>
-                                Get an Account
+                            <li className={styles.footer__col__list__item}>
+                                <Anchor underline="never" size="sm" className={styles.footer__col__list__item} href="https://web.facebook.com/agriarchelimited?mibextid=ZbWKwL&_rdc=1&_rdr" target="_blank" onClick={getStarted}>
+                                    Get an Account
+                                </Anchor>
                             </li>
                         </ul>
                     </div>
