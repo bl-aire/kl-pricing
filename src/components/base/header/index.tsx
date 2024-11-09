@@ -96,11 +96,11 @@ export default function Header() {
                                     tt="uppercase"
                                     onClick={getStarted}
                                     fullWidth
-                                    
+
                                 >
                                     Get Started
                                 </Button>
-                                </Menu.Item>
+                            </Menu.Item>
                         </Menu.Dropdown>
                     </Menu>
                 </div>

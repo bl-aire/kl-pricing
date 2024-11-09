@@ -30,15 +30,7 @@
         padding: 2rem;
         position: relative;
         z-index: 2;
-        //overflow: hidden;
-
-        /*HERE*/
-        position: relative;
-        //width: 300px;
-        //height: 300px;
-        //background: #fff;
         box-shadow: 0 0 15px rgba(0, 0, 0, .1);
-        //margin: 2rem;
 
         &__icon {
             width: 3.5rem;
@@ -49,6 +41,55 @@
             justify-content: center;
             align-items: center;
         }
+
+        &__ribbon {
+            width: 150px;
+            height: 150px;
+            overflow: hidden;
+            position: absolute;
+            top: -10px;
+            right: -10px;
+        }
+
+        &__ribbon::before,
+        &__ribbon::after {
+            position: absolute;
+            z-index: -1;
+            content: '';
+            display: block;
+            border: 5px solid rgb(184, 123, 10);
+            border-top-color: transparent;
+            border-right-color: transparent;
+        }
+
+        &__ribbon::before {
+            top: 0;
+            left: 0;
+        }
+
+        &__ribbon::after {
+            bottom: 0;
+            right: 0;
+        }
+
+        &__ribbon span {
+            position: absolute;
+            display: block;
+            width: 225px;
+            padding: 15px 0;
+            background-color: var(--mantine-color-orange-5);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+            color: #fff;
+            font-size: small;
+            font-weight: 600;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+            text-transform: uppercase;
+            text-align: center;
+
+            left: -25px;
+            top: 30px;
+            transform: rotate(45deg);
+        }
     }
 
     &__span {
@@ -58,66 +99,4 @@
 
 .bordered {
     background-color: #fffdfb;
-    //border: 1px solid #f1902512;
-}
-
-
-/*HERE*/
-
-.ribbon {
-    width: 150px;
-    height: 150px;
-    overflow: hidden;
-    position: absolute;
-}
-
-.ribbon::before,
-.ribbon::after {
-    position: absolute;
-    z-index: -1;
-    content: '';
-    display: block;
-    border: 5px solid rgb(184, 123, 10);
-}
-
-.ribbon span {
-    position: absolute;
-    display: block;
-    width: 225px;
-    padding: 15px 0;
-    background-color: var(--mantine-color-orange-5);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
-    color: #fff;
-    font: 600 13px/1 'Lato', sans-serif;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, .2);
-    text-transform: uppercase;
-    text-align: center;
-}
-
-/* top right*/
-.ribbon {
-    top: -10px;
-    right: -10px;
-}
-
-.ribbon::before,
-.ribbon::after {
-    border-top-color: transparent;
-    border-right-color: transparent;
-}
-
-.ribbon::before {
-    top: 0;
-    left: 0;
-}
-
-.ribbon::after {
-    bottom: 0;
-    right: 0;
-}
-
-.ribbon span {
-    left: -25px;
-    top: 30px;
-    transform: rotate(45deg);
 }
