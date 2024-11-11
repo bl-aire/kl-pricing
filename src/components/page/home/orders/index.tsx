@@ -61,7 +61,7 @@ export default function Orders() {
             >
                 {data?.map((el) => (
                     <Carousel.Slide key={el.id} p="xs">
-                        <Paper className={styles.orders__slide} >
+                        <Paper className={styles.orders__slide}    >
                             <Stack gap="md">
                                 <Box className={styles.orders__slide__img}>
                                     <Image src={`${mediaUrl}${el.commodityImage}`} alt="comm" w="100%" h="100%" />
@@ -145,12 +145,9 @@ export default function Orders() {
                 <Stack>
                     <Title fw={500} c="#364330" order={4}>Trending Orders</Title>
                     <Text size="sm" fw={300} c="gray.7">
-                        Stay updated with the latest orders! <br /> Discover in-demand products on Kasuwa.
+                        Stay updated with the latest orders! {/*Discover in-demand products on Kasuwa.*/}
                     </Text>
                 </Stack>
-                <Anchor c='gray.7'>
-                    View All Orders
-                </Anchor>
             </Flex>
             {_renderData()}
         </section>

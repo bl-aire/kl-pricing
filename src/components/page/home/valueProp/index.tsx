@@ -7,9 +7,6 @@ export default function ValueProp() {
     return (
         <section className={styles.vp}>
             <Stack mx="auto" align="center">
-                {/* <Title order={5} c="orange.6">
-                    Unique Selling Points
-                </Title> */}
                 <Title fw={600} c="#364330" ta="center">
                     How Can <span className={styles.vp__span}>Kasuwa</span> Help
                 </Title>
@@ -68,6 +65,7 @@ export default function ValueProp() {
                                 </Anchor>
                             </Text>
                         </Stack>
+
                     </Paper>
                 </Grid.Col>
                 <Grid.Col span={{ base: 12, md: 6, lg: 4 }}>
@@ -92,6 +90,10 @@ export default function ValueProp() {
                                     Get Started
                                 </Anchor>
                             </Text>
+
+                            <Stack className={styles.vp__paper__ribbon}>
+                                <span>Coming Soon!</span>
+                            </Stack>
                         </Stack>
                     </Paper>
                 </Grid.Col>
@@ -118,6 +120,10 @@ export default function ValueProp() {
                                     Get Started
                                 </Anchor>
                             </Text>
+
+                            <Stack className={styles.vp__paper__ribbon}>
+                                <span>Coming Soon!</span>
+                            </Stack>
                         </Stack>
                     </Paper>
                 </Grid.Col>
@@ -142,6 +148,10 @@ export default function ValueProp() {
                                     Get Started
                                 </Anchor>
                             </Text>
+
+                            <Stack className={styles.vp__paper__ribbon}>
+                                <span>Coming Soon!</span>
+                            </Stack>
                         </Stack>
                     </Paper>
                 </Grid.Col>
