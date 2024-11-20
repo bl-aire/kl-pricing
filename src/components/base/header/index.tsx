@@ -45,7 +45,7 @@ export default function Header() {
                                     Legal Policies
                                 </Link>
                             </li>
-                            <li>
+                            <li> 
                                 <Button
                                     size="md"
                                     fz={11}
@@ -87,7 +87,7 @@ export default function Header() {
                             <Menu.Item component={Link} to="/legal-policies">
                                 Legal Policies
                             </Menu.Item>
-                            <Menu.Item>
+                            {/*<Menu.Item>
                                 <Button
                                     size="sm"
                                     fz={11}
@@ -100,7 +100,7 @@ export default function Header() {
                                 >
                                     Get Started
                                 </Button>
-                            </Menu.Item>
+                            </Menu.Item>*/}
                         </Menu.Dropdown>
                     </Menu>
                 </div>

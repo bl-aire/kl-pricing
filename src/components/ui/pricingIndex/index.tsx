@@ -51,7 +51,7 @@ export default function PricingIndex() {
                     withIndicators={false}
                     plugins={[autoplay.current]}
                     slideGap={{ base: 0, sm: 'xs' }}
-                    slideSize={{ base: '70%', xs: "50%", sm: '25%', md: '20%', lg: '16%', xl: "16%" }}
+                    slideSize={{ base: '70%', xs: "50%", sm: '25%', md: '20%', lg: '20%', xl: "20%" }}
                     onMouseEnter={autoplay.current.stop}
                     onMouseLeave={autoplay.current.reset}
                     classNames={{
