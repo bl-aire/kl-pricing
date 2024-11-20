@@ -80,7 +80,7 @@ export default function ValueProp() {
                                 </Title>
                                 <Text fw={300} size="sm">
                                     Get goods on time with our network of FMCGs and processors.
-                                    Access financial services and and reliable logistics solutions
+                                    Access financial services and reliable logistics solutions
                                     to ensure smooth operations
                                 </Text>
                             </Stack>

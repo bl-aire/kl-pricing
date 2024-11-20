@@ -1,14 +1,20 @@
-import { Group, Box, Stack, Text, Title, Image } from "@mantine/core";
+import { Group, Box, Stack, Text, Title, Image, Button, SimpleGrid } from "@mantine/core";
 
 import styles from "./hero.module.scss";
 
 import heroImg from "@/assets/hero.webp";
 import loginBgLeft from "@/assets/login-bg-l.svg";
 import loginBgRight from "@/assets/login-bg-r.svg";
-import googlePlay from "@/assets/images/google-play.svg";
-//import appleStore from "@/assets/images/apple-store.svg";
 
 export default function Hero() {
+    function getStarted() {
+        window.open(`https://app.kasuwa.com/login`, "_blank");
+    }
+
+    function getOnGoogle() {
+        window.open(`https://play.google.com/store/apps/details?id=com.kasuwa_v2`, "blank");
+    }
+
     return (
         <section className={styles.hero}>
             <Box className={styles.hero__box}>
@@ -23,12 +29,29 @@ export default function Hero() {
                             financial tools to empower producers.
                         </Text>
                         <Group gap="sm" className={styles.hero__box__stack__dowloadLinks}>
-                            <a href="https://play.google.com/store/apps/details?id=com.kasuwa_v2" target="_blank" rel="noopener">
-                                <Image w={110} h={40} src={googlePlay} alt="Google Play Store logo" fit="contain" />
-                            </a>
-                            {/* <a href="" target="_blank">
-                                <Image w={100} h={40} src={appleStore} alt="Apple App Store logo" fit="contain" />
-                            </a> */}
+                            <SimpleGrid cols={2}>
+                                <Button
+                                    size="md"
+                                    fz={11}
+                                    fw={500}
+                                    color="orange.5"
+                                    tt="uppercase"
+                                    onClick={getStarted}
+                                >
+                                    Get Started
+                                </Button>
+                                <Button
+                                    size="md"
+                                    fz={11}
+                                    fw={500}
+                                    color="orange.5"
+                                    tt="uppercase"
+                                    onClick={getOnGoogle}
+                                    variant="outline"
+                                >
+                                    Download on Play Store
+                                </Button>
+                            </SimpleGrid>
                         </Group>
                     </Stack>
                 </Stack>
