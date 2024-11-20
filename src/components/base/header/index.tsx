@@ -45,7 +45,7 @@ export default function Header() {
                                     Legal Policies
                                 </Link>
                             </li>
-                            <li>
+                            <li> 
                                 <Button
                                     size="md"
                                     fz={11}

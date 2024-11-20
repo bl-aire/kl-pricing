@@ -32,7 +32,7 @@ export default function PricingIndex() {
         return (
             <Box className={styles.loader}>
                 {[...Array(el).keys()].map((_, el) => (
-                    <Group key={el} wrap="nowrap">
+                    <Group key={el} wrap="nowrap" style={{textWrap: "nowrap"}}>
                         <div className={styles.loader__dot} />
                         <div className={styles.loader__block} />
                     </Group>
@@ -51,7 +51,7 @@ export default function PricingIndex() {
                     withIndicators={false}
                     plugins={[autoplay.current]}
                     slideGap={{ base: 0, sm: 'xs' }}
-                    slideSize={{ base: '70%', xs: "50%", sm: '25%', md: '20%', lg: '16%', xl: "16%" }}
+                    slideSize={{ base: '70%', xs: "50%", sm: '25%', md: '20%', lg: '20%', xl: "20%" }}
                     onMouseEnter={autoplay.current.stop}
                     onMouseLeave={autoplay.current.reset}
                     classNames={{
@@ -62,12 +62,12 @@ export default function PricingIndex() {
                     {data?.map(el => {
                         const color = Math.sign(el.percentage) === -1 ? theme.colors.lime[9] : theme.colors.red[9];
                         return (
-                            <Carousel.Slide key={el.id} p="xs" style={{borderRight: `1px solid ${theme.colors.gray[1]}`}}>
+                            <Carousel.Slide key={el.id} p="xs" style={{borderRight: `1px solid ${theme.colors.gray[1]}`, margin: "auto"}}>
                                 <Group gap="xs" justify='center' wrap="nowrap">
                                     <Text fz={12.5} fw={400}>
                                         {el.commodityName} ({getShortState(el.location)})
                                     </Text>
-                                    <Text size="xs" fw={500} c={color}>
+                                    <Text size="xs" fw={500} c={color} >
                                         ₦{el.price}
                                     </Text>
                                 </Group>

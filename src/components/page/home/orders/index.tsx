@@ -1,10 +1,9 @@
 import { useRef } from 'react';
 import { Carousel } from '@mantine/carousel';
 import Autoplay from 'embla-carousel-autoplay';
-//import { useNavigate } from 'react-router-dom';
 import { TbMessageShare } from "react-icons/tb";
 import { IoLocationOutline } from "react-icons/io5";
-import { Group, Title, Text, Image, Box, Button, Stack, Paper, useMantineTheme, Anchor } from "@mantine/core";
+import { Flex, Group, Title, Text, Image, Box, Button, Stack, Paper, useMantineTheme, Anchor } from "@mantine/core";
 
 import styles from "./orders.module.scss";
 
@@ -12,7 +11,6 @@ import { mediaUrl } from '@/helpers/request';
 import { useGetPublicOrders } from '@/services/orders';
 
 export default function Orders() {
-    //const navigate = useNavigate();
     const autoplay = useRef(Autoplay({ delay: 2000 }));
 
     const theme = useMantineTheme();
@@ -63,7 +61,7 @@ export default function Orders() {
             >
                 {data?.map((el) => (
                     <Carousel.Slide key={el.id} p="xs">
-                        <Paper className={styles.orders__slide}>
+                        <Paper className={styles.orders__slide}    >
                             <Stack gap="md">
                                 <Box className={styles.orders__slide__img}>
                                     <Image src={`${mediaUrl}${el.commodityImage}`} alt="comm" w="100%" h="100%" />
@@ -76,12 +74,6 @@ export default function Orders() {
                                     <Text size="xs" fw={300}>
                                         {el.quantity.toLocaleString("en", { minimumFractionDigits: 2 })} MT
                                     </Text>
-                                    {/*<Group gap="xs">
-                                        <PiUsersThree color={theme.colors.orange[8]} />
-                                        <Text size="xs" fw={300}>
-                                            {Math.floor(Math.random() * 9) + 1} sellers watching
-                                        </Text>
-                                    </Group>*/}
                                 </Group>
                             </Stack>
 
@@ -111,7 +103,7 @@ export default function Orders() {
                                         td="none"
                                         className='orderLink'
                                     >
-                                        <Anchor c="white" size="xs" href={`https://app.kasuwa.com/login?redirect=dashboard/orders/open&tradeId=${el.id}&action=preview`} target="_blank">
+                                        <Anchor c="white" size='xs' href={`https://app.kasuwa.com/login?redirect=dashboard/orders/open&tradeId=${el.id}&action=preview`} target="_blank">
                                             Accept Trade
                                         </Anchor>
                                     </Button>
@@ -149,7 +141,14 @@ export default function Orders() {
                     local and internation buyers.
                 </Text>
             </Stack>
-
+            <Flex justify='space-between'  align="flex-start" >
+                <Stack>
+                    <Title fw={500} c="#364330" order={4}>Trending Orders</Title>
+                    <Text size="sm" fw={300} c="gray.7">
+                        Stay updated with the latest orders! {/*Discover in-demand products on Kasuwa.*/}
+                    </Text>
+                </Stack>
+            </Flex>
             {_renderData()}
         </section>
     )
