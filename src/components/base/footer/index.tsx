@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import { useMediaQuery } from "@mantine/hooks";
 import { FaLinkedinIn, FaInstagram, FaXTwitter, FaFacebookF } from "react-icons/fa6";
-import { Title, Grid, Group, Box, Text, useMantineTheme, Divider, Anchor } from "@mantine/core";
+import { Stack, Title, Grid, Group, Box, Text, useMantineTheme, Divider, Anchor } from "@mantine/core";
 
 import styles from "./footer.module.scss";
 import brandImg from "@/assets/logo-white.svg";
+import ndpr from "@/assets/2024ndprcomplaint.png";
 
 import loginBgLeft from "@/assets/login-bg-l.svg";
 import loginBgRight from "@/assets/login-bg-r.svg";
@@ -99,9 +100,18 @@ export default function Footer() {
             <Divider color="gray.8" />
 
             <Group justify="space-between">
-                <Text size="sm" fw={300} c="white">
-                    Copyright &copy; {new Date().getFullYear()} Kasuwa. All rights reserved
-                </Text>
+                <Group className={styles.footer__group}>
+                    <img src={ndpr} alt="2024 NDPR Complaint" height={120}/>
+                    <Stack className={styles.footer__group__ndpr}>
+                        <Text size="sm" fw={300} c="white">
+                            Copyright &copy; {new Date().getFullYear()} Kasuwa.
+                        </Text>
+                        <Text size="sm" fw={300} c="white">
+                            All rights reserved
+                        </Text>
+                    </Stack>
+                </Group>
+
                 <Text size="sm" fw={400} c="white">
                     RC - 1715246
                 </Text>
