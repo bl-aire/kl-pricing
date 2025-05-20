@@ -76,17 +76,17 @@ const questions = [
     {
         id:15,
         value: "Where do I deliver my grains to?",
-        description: "Commodities can be delivered to any of our fulfillment or collection centers closest to you. T&C applied."
+        description: "Commodities can be delivered to any of our fulfillment or collection centres closest to you. T&C applied."
     },
     {
         id:16,
-        value: "Where are your fulfillment centers located?",
-        description: "We have fulfillment centers in Lafia lamorde, Adamawa state. Biliri, Gombe state. Hadejia, Jigawa state. Ikpayango, Benue state. Pambegua, Kaduna state and Giwa, Kaduna State. "
+        value: "Where are your fulfillment centres located?",
+        description: "We have fulfillment centres in Lafia lamorde, Adamawa state. Biliri, Gombe state. Hadejia, Jigawa state. Ikpayango, Benue state. Pambegua, Kaduna state and Giwa, Kaduna State. "
     },
     {
         id:17,
         value: "How can I locate a center?",
-        description: "Check our website For information on location of our various centers."
+        description: "Check our website For information on location of our various centres."
     },
     {
         id:18,
@@ -115,7 +115,7 @@ const questions = [
     },
     {
         id:23,
-        value: "Where are your fulfillment centers located?",
+        value: "Where are your fulfillment centres located?",
         description: "We are located in Northcentral, North East, and North West."
     },
     {

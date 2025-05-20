@@ -6,3 +6,4 @@ services:
       - "3005:80"
     volumes:
       - /opt/kasuwa-landing-ui:/var/www/html/
+    restart: always
