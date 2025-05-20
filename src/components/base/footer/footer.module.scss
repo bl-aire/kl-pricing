@@ -75,6 +75,13 @@
         }
     }
 
+    &__group{
+        &__ndpr{
+            padding: 1rem 0.7rem;
+            border-left: #fff 1px solid;
+        }
+    }
+
     &__bg_l{
         width: 26rem;
         height: 26rem;
