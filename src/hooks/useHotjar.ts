@@ -7,7 +7,7 @@ export const useHotjar = () => {
     if (process.env.NODE_ENV !== 'production') return;
     if (window.hj) return; // Prevent double-inject
 
-    (function(h: any, o: any, t: string, j: string, a: any, r: any) {
+    (function(h,o,t,j,a,r){
       h.hj =
         h.hj ||
         function() {
