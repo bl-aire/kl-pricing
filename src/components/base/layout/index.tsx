@@ -5,11 +5,11 @@ interface LandingLayoutProps {
     children: React.ReactNode;
 }
 
-export default function LandingLayout({children}:LandingLayoutProps) {
+export default function LandingLayout({ children }: LandingLayoutProps) {
     return (
         <main>
             <Header />
-            {children}
+                {children}
             <Footer />
         </main>
     )

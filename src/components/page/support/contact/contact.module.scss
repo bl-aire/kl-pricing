@@ -1,5 +1,18 @@
 .info{
-    padding: 2rem 4rem;
+    //padding: 2rem 4rem;
+    padding: 0 6rem;
+
+    @include smaller-than($mantine-breakpoint-xl){
+        padding: 0rem 4rem;
+    }
+
+    @include smaller-than($mantine-breakpoint-lg){
+        padding: 0rem 4rem;
+    }
+
+    @include smaller-than($mantine-breakpoint-sm){
+        padding: 1rem 2rem;
+    }
     
     &__paper{
         background-color: #fffdfb;
@@ -7,9 +20,13 @@
         border-radius: 0.5rem;
         border: 1px solid #f1902512;
 
+        @include smaller-than($mantine-breakpoint-sm){
+        padding: 4rem 1rem;
+    }
+
         &__icon{
-            width: 4rem;
-            height: 4rem;
+            width: 3rem;
+            height: 3rem;
             background-color: var(--mantine-color-orange-1);
             border-radius: 50%;
             display: flex;

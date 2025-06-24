@@ -11,10 +11,10 @@ export default function Contact() {
                     <Grid.Col span={{ base: 12, md: 6, lg: 4 }}>
                         <Group wrap="nowrap">
                             <div className={styles.info__paper__icon}>
-                                <PiPhoneTransferFill size={24} />
+                                <PiPhoneTransferFill size={20} />
                             </div>
 
-                            <Stack w={260}>
+                            <Stack w={300}>
                                 <Title order={4} fw={600}>
                                     Talk to Sales
                                 </Title>
@@ -37,10 +37,10 @@ export default function Contact() {
                     <Grid.Col span={{ base: 12, md: 6, lg: 4 }}>
                         <Group wrap="nowrap">
                             <div className={styles.info__paper__icon}>
-                                <PiChatsFill size={24} />
+                                <PiChatsFill size={20} />
                             </div>
 
-                            <Stack w={260}>
+                            <Stack w={300}>
                                 <Title order={4} fw={600}>
                                     Get in Touch
                                 </Title>
@@ -63,10 +63,10 @@ export default function Contact() {
                     <Grid.Col span={{ base: 12, md: 6, lg: 4 }}>
                         <Group wrap="nowrap">
                             <div className={styles.info__paper__icon}>
-                                <PiBuildingsFill size={24} />
+                                <PiBuildingsFill size={20} />
                             </div>
 
-                            <Stack w={260}>
+                            <Stack w={300}>
                                 <Title order={4} fw={600}>
                                     Global Headquarters
                                 </Title>
