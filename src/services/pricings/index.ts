@@ -1,10 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 import { apiClient, castAxiosError } from "@/helpers/request";
-
 import { PricingResponse } from "./pricings.types";
 
 export const GET_PRICINGS_QKEY = "/pricings";
-async function getPricings():Promise<PricingResponse[]>{
+async function getPricings():Promise<PricingResponse>{
     try {
         const res = await apiClient.get(`/pricing/all`);
         return res.data.data;
