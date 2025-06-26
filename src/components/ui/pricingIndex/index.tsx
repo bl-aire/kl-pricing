@@ -20,7 +20,7 @@ export default function PricingIndex() {
     const break_xs = useMediaQuery(`(min-width: ${theme.breakpoints.xs})`);
 
     const  { data, status } = useGetPricings();
-
+    
     const _renderLoader = () => {
         let el;
         break_xl ? el = 7 : 
@@ -59,7 +59,7 @@ export default function PricingIndex() {
                         controls: styles.controls
                     }}
                 >
-                    {data?.map(el => {
+                    {data?.content.map((el) => {
                         const color = Math.sign(el.percentage) === -1 ? theme.colors.lime[9] : theme.colors.red[9];
                         return (
                             <Carousel.Slide key={el.id} p="xs" style={{borderRight: `1px solid ${theme.colors.gray[1]}`, margin: "auto"}}>

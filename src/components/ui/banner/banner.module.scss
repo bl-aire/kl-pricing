@@ -1,5 +1,17 @@
 .banner{
-    padding: 3rem 4rem;
     background-color: #fffdfb;
     border: 1px solid #f1902512;
+    padding: 3rem 6rem;
+
+    @include smaller-than($mantine-breakpoint-xl){
+        padding: 2rem 4rem;
+    }
+
+    @include smaller-than($mantine-breakpoint-lg){
+        padding: 2rem 4rem;
+    }
+
+    @include smaller-than($mantine-breakpoint-sm){
+        padding: 1rem 2rem;
+    }
 }
