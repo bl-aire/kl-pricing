@@ -1,5 +1,6 @@
 import { Group, Box, Stack, Text, Title, Image, Button, SimpleGrid } from "@mantine/core";
-
+// @ts-ignore: no declaration file for module '@/utils/mixpanel.js'
+import mixpanel from "@/utils/mixpanel.js";
 import styles from "./hero.module.scss";
 
 import heroImg from "@/assets/hero.webp";
@@ -9,7 +10,7 @@ import loginBgRight from "@/assets/login-bg-r.svg";
 export default function Hero() {
     function getStarted() {
         window.open(`https://app.kasuwa.com/login`, "_blank");
-        (window as any).mixpanel?.track('Get Started Button Clicked');
+        mixpanel?.track('Get Started Button Clicked');
     }
 
     function getOnGoogle() {
