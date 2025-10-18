@@ -1,6 +1,5 @@
 import { Group, Box, Stack, Text, Title, Image, Button, SimpleGrid } from "@mantine/core";
-// @ts-ignore: no declaration file for module '@/utils/mixpanel.js'
-import mixpanel from "@/utils/mixpanel.js";
+import mixpanel from "@/utils/mixpanel";
 import styles from "./hero.module.scss";
 
 import heroImg from "@/assets/hero.webp";
