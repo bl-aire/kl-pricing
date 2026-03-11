@@ -36,6 +36,12 @@ export default function Header() {
                             </li>
 
                             <li className={styles.box__list__item}>
+                                <Link to="/market-pricing">
+                                    Market Prices
+                                </Link>
+                            </li>
+
+                            <li className={styles.box__list__item}>
                                 <Link to="/support">
                                     Support
                                 </Link>
@@ -80,6 +86,9 @@ export default function Header() {
                         <Menu.Dropdown>
                             <Menu.Item component={Link} to="/">
                                 Home
+                            </Menu.Item>
+                            <Menu.Item component={Link} to="/market-pricing">
+                                Market Prices
                             </Menu.Item>
                             <Menu.Item component={Link} to="/support">
                                 Support

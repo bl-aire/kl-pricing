@@ -1,0 +1,119 @@
+.chart,
+.empty,
+.loader {
+    padding: 2rem;
+    border: 1px solid #ececee;
+}
+
+.metrics {
+    padding: 1rem;
+    border: 1px solid #ececee;
+    height: 100%;
+
+    &__content {
+        padding-left: 10px;
+
+        &__group {
+            &__leaf {
+                padding: 5px;
+                border-radius: 3px;
+                height: 25px;
+            }
+        }
+    }
+
+    &__content1 {
+        border-left: 4px solid #F1902540;
+        height: 100%;
+
+        &__group {
+            &__leaf {
+                background-color: #F1902540;
+            }
+        }
+    }
+
+    &__content2 {
+        border-left: 4px solid #0C4EC740;
+        height: 100%;
+
+        &__group {
+            &__leaf {
+                background-color: #0C4EC740;
+            }
+        }
+    }
+
+    &__content3 {
+        border-left: 4px solid #BC124240;
+        height: 100%;
+
+        &__group {
+            &__leaf {
+                background-color: #BC124240;
+            }
+        }
+    }
+
+    &__content4 {
+        border-left: 4px solid #1CEB2340;
+    }
+}
+
+.empty {
+    padding: 4rem 2rem;
+    border: 1px solid #f9f9f9;
+    background-color: #fdfdfd;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__img {
+        width: 4rem;
+        height: 4rem;
+        object-fit: cover;
+        filter: grayscale(1);
+    }
+
+    &__stack {
+        width: min(30rem, 100%);
+    }
+}
+
+
+.loader {
+    padding: 2rem;
+    border: 1px solid #ececee;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    &__label {
+        width: 8rem;
+        height: 1rem;
+        border-radius: 0.1rem;
+        background-color: var(--mantine-color-gray-1);
+        @include set-shimmer;
+    }
+
+    &__button {
+        width: 6rem;
+        height: 1rem;
+        border-radius: 0.1rem;
+        background-color: var(--mantine-color-gray-1);
+        @include set-shimmer;
+    }
+
+    &__chart {
+        border-radius: 0.5rem;
+        background-color: var(--mantine-color-gray-0);
+        height: 300px;
+    }
+
+    &__rect {
+        width: 100%;
+        height: 20rem;
+        background-color: var(--mantine-color-gray-0);
+    }
+}

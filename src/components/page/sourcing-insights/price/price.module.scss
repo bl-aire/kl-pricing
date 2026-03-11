@@ -1,0 +1,32 @@
+.tableColumnCells{
+    color: var(--mantine-color-gray-9);
+    font-size: .85rem;
+    font-weight: 500;
+}
+
+.tableCells{
+    padding: 0.85rem;
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: var(--mantine-color-gray-8);
+}
+
+.empty{
+    padding: 4rem 2rem;
+    background: #fffdfb;
+    border: 1px solid #f1902512;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__img{
+        width: 4rem;
+        height: 4rem;
+        object-fit: cover;
+    }
+    
+    &__stack{
+        width: min(30rem, 100%);
+    }
+}
