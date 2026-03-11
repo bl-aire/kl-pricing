@@ -27,10 +27,24 @@ export const appRouter = createBrowserRouter([
                 },
             },
             {
-                path: "/legal-policies",
+                path: "/privacy-policy",
                 async lazy() {
-                    let Legal = await import("@/pages/legal");
-                    return {Component: Legal.default}
+                    let PrivacyPolicy = await import("@/pages/privacy-policy");
+                    return {Component: PrivacyPolicy.default}
+                },
+            },
+            {
+                path: "/cookie-policy",
+                async lazy() {
+                    let CookiePolicy = await import("@/pages/cookie-policy");
+                    return {Component: CookiePolicy.default}
+                },
+            },
+            {
+                path: "/terms-and-conditions",
+                async lazy() {
+                    let TermsAndConditions = await import("@/pages/terms-and-conditions");
+                    return {Component: TermsAndConditions.default}
                 },
             },
         ],
