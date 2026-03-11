@@ -6,10 +6,10 @@ import styles from "./legal.module.scss";
 import Banner from '@/components/ui/banner';
 import LandingLayout from "@/components/base/layout";
 
-const title = "Legal";
-const subtitle = "Last updated: April 2022";
+const title = "Terms And Conditions";
+const subtitle = "Last updated: August 29, 2025";
 
-export default function LegalPolicies() {
+export default function TermsAndConditions() {
     const definationEl = useScrollIntoView<HTMLDivElement>({ offset: 60 });
     const acknowledgementEl = useScrollIntoView<HTMLDivElement>({ offset: 60 });
     const registrationAccountEl = useScrollIntoView<HTMLDivElement>({ offset: 60 });

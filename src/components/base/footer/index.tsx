@@ -88,7 +88,13 @@ export default function Footer() {
                                 <Link to="/support">Support</Link>
                             </li>
                             <li className={styles.footer__col__list__item}>
-                                <Link to="/legal-policies">Legal Policies</Link>
+                                <Link to="/legal-policy">Privacy Policy</Link>
+                            </li>
+                            <li className={styles.footer__col__list__item}>
+                                <Link to="/cookie-policy">Cookie Policy</Link>
+                            </li>
+                            <li className={styles.footer__col__list__item}>
+                                <Link to="/terms-and-conditions">Terms And Conditions</Link>
                             </li>
                             <li className={styles.footer__col__list__item}>
                                 <Anchor underline="never" size="sm" className={styles.footer__col__list__item} href="https://web.facebook.com/agriarchelimited?mibextid=ZbWKwL&_rdc=1&_rdr" target="_blank" onClick={getStarted}>
