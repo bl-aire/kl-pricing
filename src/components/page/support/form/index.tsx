@@ -6,8 +6,15 @@ import FormInput from "@/components/base/forms/formInput";
 import FormButton from "@/components/base/forms/formButton";
 import FormTextArea from "@/components/base/forms/formTextArea";
 
+interface FormData {
+    fullName: string,
+    email: string,
+    phoneNumber: string,
+    message: string,
+}
+
 export default function Form() {
-    const form = useForm({
+    const form = useForm<FormData>({
         initialValues: {
             fullName: "",
             email: "",
@@ -23,8 +30,6 @@ export default function Form() {
     });
 
     const handleSubmit = (values: typeof form.values) => {
-        console.log(values);
-
         const email = "tradekasuwa@agriarche.com";
         const subject =`Inquiry about....from ${values.fullName} with phone number ${values.phoneNumber}`;
         const body = values.message;

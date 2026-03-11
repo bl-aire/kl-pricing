@@ -334,7 +334,7 @@ export default function Chart() {
                                         curveType="natural"
                                         connectNulls={false}
                                         tooltipProps={{
-                                            content: ({ label, payload }: { label?: string | number; payload: readonly any[] }) => {
+                                            content: ({ label, payload }) => {
                                                 if (!payload?.length) return null;
                                                 const { market } = payload[0].payload;
                                                 const value = payload[0].value;
