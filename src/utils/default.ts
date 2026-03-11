@@ -46,3 +46,30 @@ export function getShortState(stateName: string) {
   stateName = stateName.trim().toUpperCase();
   return stateMap[stateName] || stateName.slice(0, 3);
 }
+
+export function formatDate(dateString: string) {
+  const date = new Date(dateString);
+  const today = new Date();
+  const yesterday = new Date(today);
+  yesterday.setDate(today.getDate() - 1);
+
+  const hours = date.getHours();
+  const minutes = String(date.getMinutes()).padStart(2, '0');
+
+  const ampm = hours >= 12 ? 'PM' : 'AM';
+  const formattedHours = hours % 12 || 12;
+
+  if (date.toDateString() === today.toDateString()) {
+    return `Today at ${formattedHours}:${minutes} ${ampm}`;
+  } else if (date.toDateString() === yesterday.toDateString()) {
+    return `Yesterday at ${formattedHours}:${minutes} ${ampm}`;
+  } else {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+
+    const formattedDate = `${year}-${month}-${day} - ${formattedHours}:${minutes}${ampm}`;
+
+    return formattedDate;
+  }
+}

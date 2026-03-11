@@ -20,6 +20,13 @@ export const appRouter = createBrowserRouter([
                 },
             },
             {
+                path: "/market-pricing",
+                async lazy() {
+                    let MarketPricing = await import("@/pages/market-pricing");
+                    return {Component: MarketPricing.default}
+                },
+            },
+            {
                 path: "/legal-policies",
                 async lazy() {
                     let Legal = await import("@/pages/legal");

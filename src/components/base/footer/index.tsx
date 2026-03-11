@@ -81,6 +81,9 @@ export default function Footer() {
                             <li className={styles.footer__col__list__item}>
                                 <Link to="/">Home</Link>
                             </li>
+                             <li className={styles.footer__col__list__item}>
+                                <Link to="/market-pricing">Market Pricing</Link>
+                            </li>
                             <li className={styles.footer__col__list__item}>
                                 <Link to="/support">Support</Link>
                             </li>

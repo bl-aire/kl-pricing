@@ -1,0 +1,51 @@
+.tableColumnCells{
+    color: var(--mantine-color-gray-9);
+    font-size: .85rem;
+    font-weight: 500;
+}
+
+.tableCells{
+    padding: 0.85rem;
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: var(--mantine-color-gray-8);
+}
+
+.cellTitle{
+    width: 5rem;
+    height: 0.5rem;
+    border-radius: 0.1rem;
+    background-color: var(--mantine-color-gray-2);
+    margin-bottom: 0.5rem;
+}
+
+.cellLoader{
+    height: 0.5rem;
+    border-radius: 0.1rem;
+    background-color: var(--mantine-color-gray-1);
+}
+
+.input{
+    width: 20rem;
+    height: 1.8rem;
+    background-color: var(--mantine-color-gray-1);
+    border-radius: 1px;
+}
+
+.btn{
+    width: 8rem;
+    height: 2rem;
+    background-color: var(--mantine-color-gray-1);
+    border-radius: 1px
+}
+
+.pagination{
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 0.4rem;
+    background-color: var(--mantine-color-gray-1);
+}
+
+.animate {
+    @include set-shimmer;
+}

@@ -1,0 +1,29 @@
+.paper {
+    &__background {
+        filter: brightness(0.7);
+    }
+
+    &__stack {
+        position: relative;
+        padding: 3.5rem 1rem;
+        margin-top: -70px;
+        background: linear-gradient(274.77deg, rgba(241, 144, 37, 0.11) 4.26%, rgba(247, 142, 57, 0.75) 77.55%);
+
+        &__title {
+            font-size: 1.7rem;
+            width: min(30rem, 100%);
+            font-weight: 600;
+        }
+
+        &__description {
+            background-color: #F0FCEA;
+            border-radius: 12px;
+            padding: 12px 14px;
+            width: fit-content;
+            align-items: center;
+            justify-content: center;
+            font-size: small;
+            display: flex;
+        }
+    }
+}

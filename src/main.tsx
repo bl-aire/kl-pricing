@@ -6,6 +6,7 @@ import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 // --- Styles ---
 import '@mantine/core/styles.css';
 import '@mantine/carousel/styles.css';
+import 'mantine-datatable/styles.css';
 
 // --- Main application ---
 import MainApp from './App';
