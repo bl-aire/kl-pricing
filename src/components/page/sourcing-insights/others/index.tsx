@@ -2,7 +2,7 @@ import { useState, useMemo } from "react";
 //import { useForm } from "@mantine/form";
 import { DataTable, type DataTableColumn } from 'mantine-datatable';
 import { IoSearchOutline, IoDownloadOutline } from "react-icons/io5";
-import { Title, Text, Paper, Group, Stack, Box, TextInput, Button, Image } from "@mantine/core"; //Grid, Card
+import { Title, Text, Paper, Group, Stack, Box, TextInput, Button, Image, Grid } from "@mantine/core"; //Grid, Card
 
 import { useGetOtherSources, useGetFilters } from "@/services/market-pricing/pricing"; //useGetComparePrice
 import type { OtherSourcesResponse } from "@/services/market-pricing/pricing.types";
@@ -43,11 +43,11 @@ export default function OtherSources() {
     const filters = useGetFilters();
 
     const commodityOptions = [
-        { label: "All Commodities", value: ""},
+        { label: "All Commodities", value: "" },
         ...(filters.data?.other_sources.commodities.map((c) => ({
-        label: c,
-        value: c
-    })) || []),
+            label: c,
+            value: c
+        })) || []),
     ];
 
     {/*const commodities = filters.data?.other_sources.commodities.map(c => ({
@@ -56,11 +56,11 @@ export default function OtherSources() {
     })) || [];*/}
 
     const locationOptions = [
-        { label: "All Locations", value: ""},
+        { label: "All Locations", value: "" },
         ...(filters.data?.other_sources.locations.map((l) => ({
-        label: l,
-        value: l
-    })) || []),
+            label: l,
+            value: l
+        })) || []),
     ];
 
     {/*const months = filters.data?.months.map(m => ({
@@ -163,15 +163,20 @@ export default function OtherSources() {
     const _renderEmpty = () => {
         return (
             <Stack>
-                <Group my="md" justify="space-between">
-                    <Group gap="sm">
+                <Grid my="md">
+                    <Grid.Col span={{ base: 12, md: 3 }}>
                         <TextInput
                             leftSection={<IoSearchOutline />}
-                            disabled c="gray.8"
+                            c="gray.8"
                             w={{ base: "100%", md: 300 }}
                             placeholder="Search by commodity"
+                            value={searchTerm}
+                            disabled
+                            onChange={(e) => setSearchTerm(e.currentTarget.value)}
                             size="md"
                         />
+                    </Grid.Col>
+                    <Grid.Col span={{ base: 12, md: 3 }}>
                         <FormSelect
                             withAsterisk
                             data={commodityOptions}
@@ -181,21 +186,26 @@ export default function OtherSources() {
                             value={commodity}
                             onChange={(value) => setCommodity(value || "")}
                         />
-                    </Group>
-                    <Group>
+                    </Grid.Col>
+
+                    <Grid.Col span={{ base: 12, md: 3 }}>
                         <FormSelect
                             withAsterisk
                             data={locationOptions}
                             placeholder="Select a location"
                             size="md"
-                            searchable
                             value={location}
+                            searchable
                             onChange={(value) => setLocation(value || "")}
                         />
-                        <Button leftSection={<IoDownloadOutline />} disabled fz={11} tt="uppercase" fw={400} color="gray.5" c="dark" variant="light" size="md">Export</Button>
-                    </Group>
-                </Group>
+                    </Grid.Col>
+                    <Grid.Col span={{ base: 12, md: 3 }}>
+                        <Group align="flex-end">
+                            <Button leftSection={<IoDownloadOutline />} disabled fz={11} tt="uppercase" fw={400} color="gray.5" c="dark" variant="light" onClick={handleExport} size="md">Export</Button>
+                        </Group>
+                    </Grid.Col>
 
+                </Grid>
                 <Paper className={styles.empty}>
                     <Stack className={styles.empty__stack} align="center" gap="xs">
                         <Image className={styles.empty__img} src={emptyImg} alt="empty" />
@@ -339,8 +349,9 @@ export default function OtherSources() {
                     <Text size="lg" tt="uppercase" fw={400}>
                         Open Market Prices
                     </Text>
-                    <Group my="md" justify="space-between" wrap="wrap">
-                        <Group gap="sm">
+
+                    <Grid my="md">
+                        <Grid.Col span={{ base: 12, md: 3 }}>
                             <TextInput
                                 leftSection={<IoSearchOutline />}
                                 c="gray.8"
@@ -350,6 +361,8 @@ export default function OtherSources() {
                                 onChange={(e) => setSearchTerm(e.currentTarget.value)}
                                 size="md"
                             />
+                        </Grid.Col>
+                        <Grid.Col span={{ base: 12, md: 3 }}>
                             <FormSelect
                                 withAsterisk
                                 data={commodityOptions}
@@ -359,8 +372,9 @@ export default function OtherSources() {
                                 value={commodity}
                                 onChange={(value) => setCommodity(value || "")}
                             />
-                        </Group>
-                        <Group>
+                        </Grid.Col>
+
+                        <Grid.Col span={{ base: 12, md: 3 }}>
                             <FormSelect
                                 withAsterisk
                                 data={locationOptions}
@@ -370,9 +384,14 @@ export default function OtherSources() {
                                 searchable
                                 onChange={(value) => setLocation(value || "")}
                             />
-                            <Button leftSection={<IoDownloadOutline />} fz={11} tt="uppercase" fw={400} color="gray.5" c="dark" variant="light" onClick={handleExport} size="md">Export</Button>
-                        </Group>
-                    </Group>
+                        </Grid.Col>
+                        <Grid.Col span={{ base: 12, md: 3 }}>
+                            <Group align="flex-end">
+                                <Button leftSection={<IoDownloadOutline />} fz={11} tt="uppercase" fw={400} color="gray.5" c="dark" variant="light" onClick={handleExport} size="md">Export</Button>
+                            </Group>
+                        </Grid.Col>
+
+                    </Grid>
 
                     <DataTable
                         minHeight={300}

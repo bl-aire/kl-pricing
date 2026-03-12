@@ -2,7 +2,7 @@ import { useState, useMemo } from "react";
 
 import { DataTable, type DataTableColumn } from 'mantine-datatable';
 import { IoSearchOutline, IoFilterOutline, IoDownloadOutline } from "react-icons/io5";
-import { Title, Text, Paper, Group, Stack, Box, TextInput, Button, Image } from "@mantine/core";
+import { Title, Text, Paper, Group, Stack, Box, TextInput, Button, Image, Grid } from "@mantine/core";
 
 import { useGetGapAnalysis } from "@/services/market-pricing/pricing";
 import type { GapAnalysisResponse } from "@/services/market-pricing/pricing.types";
@@ -30,12 +30,12 @@ export default function GapHistory() {
 
 
     const filteredList = useMemo(() => {
-            if (!data) return [];
-    
-            return data?.data.filter(record =>
-                !searchTerm || record.commodity.toLowerCase().includes(searchTerm.toLowerCase())
-            );
-        }, [data, searchTerm]);
+        if (!data) return [];
+
+        return data?.data.filter(record =>
+            !searchTerm || record.commodity.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+    }, [data, searchTerm]);
 
     const columns: DataTableColumn<GapAnalysisResponse>[] = [
         {
@@ -105,20 +105,33 @@ export default function GapHistory() {
             <Stack>
                 <Group my="md" justify="space-between">
                     <Group gap="sm">
-                        <TextInput 
-                            leftSection={<IoSearchOutline />} 
-                            disabled 
-                            c="gray.8" 
-                            w={{base: "100%", sm: 300}} 
-                            placeholder="Search by commodity"
-                            size="md"
-                        />
+
                     </Group>
                     <Group>
-                        <Button leftSection={<IoFilterOutline />} disabled fz={11} tt="uppercase" fw={400} color="gray.5" c="dark" variant="light">Filters</Button>
-                        <Button leftSection={<IoDownloadOutline />} disabled fz={11} tt="uppercase" fw={400} color="gray.5" c="dark" variant="light" size="md">Export</Button>
+
                     </Group>
                 </Group>
+
+                <Grid my="md">
+                    <Grid.Col span={{ base: 12, md: 6 }}>
+                        <Group gap="sm" align="center">
+                            <TextInput
+                                leftSection={<IoSearchOutline />}
+                                disabled
+                                c="gray.8"
+                                w={{ base: "50%", sm: 300 }}
+                                placeholder="Search by commodity"
+                                size="md"
+                            />
+                        </Group>
+                    </Grid.Col>
+                    <Grid.Col span={{ base: 12, md: 6 }}>
+                        <Group align="center" justify="flex-end">
+                            <Button leftSection={<IoFilterOutline />} disabled fz={11} tt="uppercase" fw={400} color="gray.5" c="dark" variant="light">Filters</Button>
+                            <Button leftSection={<IoDownloadOutline />} disabled fz={11} tt="uppercase" fw={400} color="gray.5" c="dark" variant="light" size="md">Export</Button>
+                        </Group>
+                    </Grid.Col>
+                </Grid>
 
                 <Paper className={styles.empty}>
                     <Stack className={styles.empty__stack} align="center" gap="xs">
@@ -148,26 +161,32 @@ export default function GapHistory() {
                 <Text size="lg" tt="uppercase" fw={400}>
                     Best Buy & Sell Markets: January 2026
                 </Text>
-                <Group my="md" justify="space-between" wrap="wrap">
-                    <Group gap="sm">
-                        <TextInput
-                            leftSection={<IoSearchOutline />}
-                            c="gray.8" 
-                            w={{base: "100%", sm: 300}}
-                            placeholder="Search by commodity"
-                            value={searchTerm}
-                            onChange={(e) => setSearchTerm(e.currentTarget.value)}
-                            size="md"
-                        />
-                    </Group>
-                    <Group>
-                        <Button leftSection={<IoDownloadOutline />} fz={11} tt="uppercase" fw={400} color="gray.5" c="dark" variant="light" onClick={handleExport} size="md">Export</Button>
-                    </Group>
-                </Group>
+
+                <Grid my="md">
+                    <Grid.Col span={{ base: 6, md: 6 }}>
+                        <Group gap="sm">
+                            <TextInput
+                                leftSection={<IoSearchOutline />}
+                                c="gray.8"
+                                w={{ base: "100%", sm: 300 }}
+                                placeholder="Search by commodity"
+                                value={searchTerm}
+                                onChange={(e) => setSearchTerm(e.currentTarget.value)}
+                                size="md"
+                            />
+                        </Group>
+                    </Grid.Col>
+                    <Grid.Col span={{ base: 6, md: 6 }}>
+                        <Group align="center" justify="flex-end">
+                            <Button w={{base: "100%", sm: 300}} leftSection={<IoDownloadOutline />} fz={11} tt="uppercase" fw={400} color="gray.5" c="dark" variant="light" onClick={handleExport} size="md">Export</Button>
+                        </Group>
+
+                    </Grid.Col>
+                </Grid>
 
                 <DataTable
                     striped={true}
-                    minHeight={300} 
+                    minHeight={300}
                     columns={columns}
                     withRowBorders={true}
                     withColumnBorders={true}
