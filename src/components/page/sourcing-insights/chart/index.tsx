@@ -371,41 +371,41 @@ export default function Chart() {
                                 </Group>
 
                                 <Stack align="left">
-                                    <Text size="xs" fw={300}>
+                                    <Text size="sm" fw={300}>
                                         Insights and analysis on market prices, trends, and sourcing opportunities to help you make informed trading decisions.
                                     </Text>
                                 </Stack>
 
                                 <Stack align="left">
-                                    <Group>
-                                        <Text size="xs" fw={400}>
+                                    <Group gap={5}>
+                                        <Text size="sm" fw={400}>
                                             Description:
                                         </Text>
-                                        <Text size="xs" fw={300} c="dimmed">
+                                        <Text size="sm" fw={300} c="dimmed">
                                             {intelligenceData?.intelligence?.desc}
                                         </Text>
                                     </Group>
-                                    <Group>
-                                        <Text size="xs" fw={400}>
+                                    <Group gap={5}>
+                                        <Text size="sm" fw={400}>
                                             Primary Markets:
                                         </Text>
-                                        <Text size="xs" fw={300} c="dimmed">
+                                        <Text size="sm" fw={300} c="dimmed">
                                             {intelligenceData?.intelligence?.markets}
                                         </Text>
                                     </Group>
-                                    <Group>
-                                        <Text size="xs" fw={400}>
+                                    <Group gap={5}>
+                                        <Text size="sm" fw={400}>
                                             Abundance:
                                         </Text>
-                                        <Text size="xs" fw={300} c="dimmed">
+                                        <Text size="sm" fw={300} c="dimmed">
                                             {intelligenceData?.intelligence?.abundance}
                                         </Text>
                                     </Group>
-                                    <Group>
-                                        <Text size="xs" fw={400}>
+                                    <Group gap={5}>
+                                        <Text size="sm" fw={400}>
                                             Note:
                                         </Text>
-                                        <Text size="xs" fw={300} c="dimmed">
+                                        <Text size="sm" fw={300} c="dimmed">
                                             {intelligenceData?.intelligence?.note}
                                         </Text>
                                     </Group>
@@ -422,7 +422,7 @@ export default function Chart() {
                                 </Group>
 
                                 <Stack align="left">
-                                    <Text size="xs" fw={300} c="dimmed">
+                                    <Text size="sm" fw={300} c="dimmed">
                                         {advisorData?.advice}
                                     </Text>
                                 </Stack>
