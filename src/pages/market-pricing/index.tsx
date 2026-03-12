@@ -13,6 +13,9 @@ import barner2 from "@/assets/banner-truck2.png";
 import barner1 from "@/assets/banner-truck.png";
 
 export default function MarketPricing() {
+    const currentDate = new Date();
+    const currentMonthName = currentDate.toLocaleString('default', {month: 'long'});
+
     return (
         <LandingLayout>
             <Stack w={"100%"} className={styles.pricing}>
@@ -26,9 +29,9 @@ export default function MarketPricing() {
                 </Stack>
                 <Chart />
                 <PriceHistory />
-                <Banner imageSrc={barner2} title="Best Buy & Sell Market: January 2026" description="Download January Monthly Intelligence Reports" />
+                <Banner imageSrc={barner2} title={`Best Buy & Sell Market: ${currentMonthName} 2026`} description={`Download ${currentMonthName} Monthly Intelligence Reports`} />
                 <GapHistory />
-                <Banner imageSrc={barner1} title="External Market Price Comparison" description="Compare commodity prices across different markets" />
+                <Banner imageSrc={barner1} title="Open Market Price Comparison" description="Compare commodity prices across different markets" />
                 <OtherSources />
             </Stack>
         </LandingLayout>
