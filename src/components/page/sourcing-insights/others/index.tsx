@@ -168,7 +168,6 @@ export default function OtherSources() {
                         <TextInput
                             leftSection={<IoSearchOutline />}
                             c="gray.8"
-                            w={{ base: "100%", md: 300 }}
                             placeholder="Search by commodity"
                             value={searchTerm}
                             disabled
@@ -355,7 +354,6 @@ export default function OtherSources() {
                             <TextInput
                                 leftSection={<IoSearchOutline />}
                                 c="gray.8"
-                                w={{ base: "100%", md: 300 }}
                                 placeholder="Search by commodity"
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.currentTarget.value)}

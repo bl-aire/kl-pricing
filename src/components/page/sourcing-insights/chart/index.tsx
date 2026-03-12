@@ -11,11 +11,13 @@ import star from "@/assets/star2.png";
 
 import { useGetAnalysis, useGetIntelligence, useGetFilters, useGetAdvisor } from "@/services/market-pricing/pricing";
 
-
 export default function Chart() {
+    const currentDate = new Date();
+    const currentMonthName = currentDate.toLocaleString('default', {month: 'long'});
+
     const [commodity, setCommodity] = useState<string>("Millet");
     const [market, setMarket] = useState<string>("All Markets");
-    const [month, setMonth] = useState<string>("January");
+    const [month, setMonth] = useState<string>(currentMonthName);
     const [perKg, setPerKg] = useState<boolean>(true);
 
     const filters = useGetFilters();
@@ -24,7 +26,7 @@ export default function Chart() {
         page: 1,
         page_size: 100,
         commodity: commodity || "Millet",
-        month: month || "January",
+        month: month || currentMonthName,
         market: market || "All Markets"
     });
 

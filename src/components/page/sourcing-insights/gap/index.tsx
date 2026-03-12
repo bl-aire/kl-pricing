@@ -15,6 +15,9 @@ import ErrorCard from "@/components/ui/misc/errorCard";
 
 
 const PAGE_SIZES = [10, 15, 20, 50, 100, 500];
+const currentDate = new Date();
+const currentMonthName = currentDate.toLocaleString('default', {month: 'long'});
+
 
 export default function GapHistory() {
     const [page, setPage] = useState(1);
@@ -24,7 +27,7 @@ export default function GapHistory() {
     const { data, error, status, refetch } = useGetGapAnalysis({
         page,
         page_size,
-        month: "January",
+        month: currentMonthName,
         market: "All Markets"
     });
 
@@ -103,15 +106,6 @@ export default function GapHistory() {
     const _renderEmpty = () => {
         return (
             <Stack>
-                <Group my="md" justify="space-between">
-                    <Group gap="sm">
-
-                    </Group>
-                    <Group>
-
-                    </Group>
-                </Group>
-
                 <Grid my="md">
                     <Grid.Col span={{ base: 12, md: 6 }}>
                         <Group gap="sm" align="center">
@@ -159,7 +153,7 @@ export default function GapHistory() {
         else return (
             <Paper my={50}>
                 <Text size="lg" tt="uppercase" fw={400}>
-                    Best Buy & Sell Markets: January 2026
+                    Best Buy & Sell Markets: {currentMonthName} 2026
                 </Text>
 
                 <Grid my="md">
