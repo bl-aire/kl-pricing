@@ -131,8 +131,8 @@ export default function Chart() {
                     <Grid.Col span={{ base: 12, md: 8 }}>
                         <Paper className={styles.empty}>
                             <Box className={styles.empty__img} />
-                            <Group align="center" justify="center">
-                                <Group>
+                            <Grid align="center">
+                                <Grid.Col span={{ base: 12, md: 3 }}>
                                     <FormSelect
                                         withAsterisk
                                         data={commodityOptions}
@@ -142,42 +142,45 @@ export default function Chart() {
                                         size="md"
                                         value={commodity}
                                         onChange={(value) => setCommodity(value || "")}
-
                                     />
+                                </Grid.Col>
+                                <Grid.Col span={{ base: 12, md: 3 }}>
                                     <FormSelect
                                         withAsterisk
+                                        searchable
                                         data={marketOptions}
                                         placeholder="Select a market"
                                         label="Market"
                                         size="md"
-                                        searchable
                                         value={market}
                                         onChange={(value) => setMarket(value || "")}
                                     />
+                                </Grid.Col>
+                                <Grid.Col span={{ base: 12, md: 3 }}>
                                     <FormSelect
                                         withAsterisk
                                         data={months}
                                         placeholder="Select a month"
                                         label="Month"
-                                        searchable
                                         size="md"
+                                        searchable
                                         value={month}
                                         onChange={(value) => setMonth(value || "")}
                                     />
+                                </Grid.Col>
+                                <Grid.Col span={{ base: 12, md: 3 }}>
                                     <Radio.Group
                                         value={perKg ? "kg" : "bag"}
                                         onChange={(value) => setPerKg(value === "kg")}
 
                                     >
                                         <Group mt={30} align="center">
-                                            <Radio label="Per Bag" value="bag" />
-                                            <Radio label="Per Kg" value="kg" />
+                                            <Radio label="Per Bag" value="bag" size="xs" />
+                                            <Radio label="Per Kg" value="kg" size="xs" />
                                         </Group>
-
                                     </Radio.Group>
-
-                                </Group>
-                            </Group>
+                                </Grid.Col>
+                            </Grid>
                             <Text className={styles.empty__stack} fw={400} fz="md" mt={50} ta="center">
                                 No data available for this commodity
                             </Text>
@@ -265,8 +268,9 @@ export default function Chart() {
                 <Grid.Col span={{ base: 12, md: 8 }}>
                     <Paper className={styles.chart}>
                         <Stack gap="lg">
-                            <Group align="center" justify="center">
-                                <Group>
+
+                            <Grid align="center">
+                                <Grid.Col span={{ base: 12, md: 3 }}>
                                     <FormSelect
                                         withAsterisk
                                         data={commodityOptions}
@@ -277,6 +281,8 @@ export default function Chart() {
                                         value={commodity}
                                         onChange={(value) => setCommodity(value || "")}
                                     />
+                                </Grid.Col>
+                                <Grid.Col span={{ base: 12, md: 3 }}>
                                     <FormSelect
                                         withAsterisk
                                         searchable
@@ -287,6 +293,8 @@ export default function Chart() {
                                         value={market}
                                         onChange={(value) => setMarket(value || "")}
                                     />
+                                </Grid.Col>
+                                <Grid.Col span={{ base: 12, md: 3 }}>
                                     <FormSelect
                                         withAsterisk
                                         data={months}
@@ -297,19 +305,20 @@ export default function Chart() {
                                         value={month}
                                         onChange={(value) => setMonth(value || "")}
                                     />
+                                </Grid.Col>
+                                <Grid.Col span={{ base: 12, md: 3 }}>
                                     <Radio.Group
                                         value={perKg ? "kg" : "bag"}
                                         onChange={(value) => setPerKg(value === "kg")}
 
                                     >
                                         <Group mt={30} align="center">
-                                            <Radio label="Per Bag" value="bag" />
-                                            <Radio label="Per Kg" value="kg" />
+                                            <Radio label="Per Bag" value="bag" size="xs" />
+                                            <Radio label="Per Kg" value="kg" size="xs" />
                                         </Group>
                                     </Radio.Group>
-                                </Group>
-                            </Group>
-
+                                </Grid.Col>
+                            </Grid>
                             {analysisData && (
                                 <Box w="100%" style={{ overflow: 'hidden' }}>
                                     <AreaChart
@@ -371,41 +380,41 @@ export default function Chart() {
                                 </Group>
 
                                 <Stack align="left">
-                                    <Text size="sm" fw={300}>
+                                    <Text size="xs" fw={400}>
                                         Insights and analysis on market prices, trends, and sourcing opportunities to help you make informed trading decisions.
                                     </Text>
                                 </Stack>
 
                                 <Stack align="left">
                                     <Group gap={5}>
-                                        <Text size="sm" fw={400}>
+                                        <Text size="xs" fw={400}>
                                             Description:
                                         </Text>
-                                        <Text size="sm" fw={300} c="dimmed">
+                                        <Text size="xs" fw={400} c="dimmed">
                                             {intelligenceData?.intelligence?.desc}
                                         </Text>
                                     </Group>
                                     <Group gap={5}>
-                                        <Text size="sm" fw={400}>
+                                        <Text size="xs" fw={400}>
                                             Primary Markets:
                                         </Text>
-                                        <Text size="sm" fw={300} c="dimmed">
+                                        <Text size="xs" fw={400} c="dimmed">
                                             {intelligenceData?.intelligence?.markets}
                                         </Text>
                                     </Group>
                                     <Group gap={5}>
-                                        <Text size="sm" fw={400}>
+                                        <Text size="xs" fw={400}>
                                             Abundance:
                                         </Text>
-                                        <Text size="sm" fw={300} c="dimmed">
+                                        <Text size="xs" fw={400} c="dimmed">
                                             {intelligenceData?.intelligence?.abundance}
                                         </Text>
                                     </Group>
                                     <Group gap={5}>
-                                        <Text size="sm" fw={400}>
+                                        <Text size="xs" fw={400}>
                                             Note:
                                         </Text>
-                                        <Text size="sm" fw={300} c="dimmed">
+                                        <Text size="xs" fw={400} c="dimmed">
                                             {intelligenceData?.intelligence?.note}
                                         </Text>
                                     </Group>
@@ -422,7 +431,7 @@ export default function Chart() {
                                 </Group>
 
                                 <Stack align="left">
-                                    <Text size="sm" fw={300} c="dimmed">
+                                    <Text size="xs" fw={400} c="dimmed">
                                         {advisorData?.advice}
                                     </Text>
                                 </Stack>

@@ -2,7 +2,7 @@ import { useState, useMemo } from "react";
 
 import { DataTable, type DataTableColumn } from 'mantine-datatable';
 import { IoSearchOutline, IoDownloadOutline } from "react-icons/io5";
-import { Title, Text, Paper, Group, Stack, Box, TextInput, Button, Image } from "@mantine/core";
+import { Title, Text, Paper, Group, Stack, Box, TextInput, Button, Image, Grid } from "@mantine/core";
 
 import { useGetPrices } from "@/services/market-pricing/pricing";
 import { useGetFilters } from "@/services/market-pricing/pricing";
@@ -37,19 +37,19 @@ export default function PriceHistory() {
     const filters = useGetFilters();
 
     const commodityOptions = [
-        { label: "All Commodities", value: ""},
+        { label: "All Commodities", value: "" },
         ...(filters.data?.commodities.map((c) => ({
-        label: c,
-        value: c
-    })) || []),
+            label: c,
+            value: c
+        })) || []),
     ];
 
     const marketOptions = [
-        { label: "All Markets", value: ""},
+        { label: "All Markets", value: "" },
         ...(filters.data?.markets.map((m) => ({
-        label: m,
-        value: m
-    })) || []),
+            label: m,
+            value: m
+        })) || []),
     ];
 
     const filteredList = useMemo(() => {
@@ -135,14 +135,19 @@ export default function PriceHistory() {
     const _renderEmpty = () => {
         return (
             <Stack>
-                <Group my="md" justify="space-between" wrap="wrap">
-                    <Group gap="sm">
+                <Grid my="md">
+                    <Grid.Col span={{ base: 12, md: 3 }}>
                         <TextInput
                             leftSection={<IoSearchOutline />}
-                            //disabled c="gray.8"
-                            w={{ base: "100%", sm: 300 }}
+                            c="gray.8"
+                            size="md"
+                            disabled
                             placeholder="Search by state"
-                            size="md" />
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.currentTarget.value)}
+                        />
+                    </Grid.Col>
+                    <Grid.Col span={{ base: 12, md: 3 }}>
                         <FormSelect
                             withAsterisk
                             data={commodityOptions}
@@ -152,20 +157,26 @@ export default function PriceHistory() {
                             value={commodity}
                             onChange={(value) => setCommodity(value || "")}
                         />
-                    </Group>
-                    <Group align="center">
+                    </Grid.Col>
+
+                    <Grid.Col span={{ base: 12, md: 3 }}>
                         <FormSelect
                             withAsterisk
+                            searchable
                             data={marketOptions}
                             placeholder="Select a market"
                             size="md"
-                            searchable
                             value={market}
                             onChange={(value) => setMarket(value || "")}
                         />
-                        <Button leftSection={<IoDownloadOutline />} disabled fz={11} tt="uppercase" fw={400} color="gray.5" c="dark" variant="light" size="md">Export</Button>
-                    </Group>
-                </Group>
+                    </Grid.Col>
+                    <Grid.Col span={{ base: 12, md: 3 }}>
+                        <Group align="flex-end">
+                            <Button leftSection={<IoDownloadOutline />} fz={11} tt="uppercase" fw={400} color="gray.5" c="dark" variant="light" onClick={handleExport} size="md" disabled>Export</Button>
+                        </Group>
+                    </Grid.Col>
+
+                </Grid>
 
                 <Paper className={styles.empty}>
                     <Stack className={styles.empty__stack} align="center" gap="xs">
@@ -196,17 +207,18 @@ export default function PriceHistory() {
                 <Text size="lg" tt="uppercase" fw={400}>
                     Market Price Records
                 </Text>
-                <Group my="md" justify="space-between">
-                    <Group gap="sm" align="center">
+                <Grid my="md">
+                    <Grid.Col span={{ base: 12, md: 3 }}>
                         <TextInput
                             leftSection={<IoSearchOutline />}
                             c="gray.8"
-                            w={{ base: "100%", sm: 300 }}
                             size="md"
                             placeholder="Search by state"
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.currentTarget.value)}
                         />
+                    </Grid.Col>
+                    <Grid.Col span={{ base: 12, md: 3 }}>
                         <FormSelect
                             withAsterisk
                             data={commodityOptions}
@@ -216,8 +228,9 @@ export default function PriceHistory() {
                             value={commodity}
                             onChange={(value) => setCommodity(value || "")}
                         />
-                    </Group>
-                    <Group align="center">
+                    </Grid.Col>
+
+                    <Grid.Col span={{ base: 12, md: 3 }}>
                         <FormSelect
                             withAsterisk
                             searchable
@@ -227,11 +240,16 @@ export default function PriceHistory() {
                             value={market}
                             onChange={(value) => setMarket(value || "")}
                         />
-                        <Button leftSection={<IoDownloadOutline />} fz={11} tt="uppercase" fw={400} color="gray.5" c="dark" variant="light" onClick={handleExport} size="md">Export</Button>
-                    </Group>
-                </Group>
+                    </Grid.Col>
+                    <Grid.Col span={{ base: 12, md: 3 }}>
+                        <Group align="flex-end">
+                            <Button leftSection={<IoDownloadOutline />} fz={11} tt="uppercase" fw={400} color="gray.5" c="dark" variant="light" onClick={handleExport} size="md">Export</Button>
+                        </Group>
+                    </Grid.Col>
+
+                </Grid>
                 <DataTable
-                    minHeight={300} 
+                    minHeight={300}
                     striped={true}
                     columns={columns}
                     withRowBorders={true}
