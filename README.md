@@ -85,4 +85,7 @@ https://kasuwa.com/market-pricing
 
 ### Screenshots
 
+<img width="960" height="433" alt="image" src="https://github.com/user-attachments/assets/34abb13e-4a4c-472b-b37b-64f744aa5ffa" />
+
+
 ### Lessons Learned
