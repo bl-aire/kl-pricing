@@ -1,11 +1,11 @@
 import { useState, useMemo } from "react";
-//import { useForm } from "@mantine/form";
+import { useForm } from "@mantine/form";
 import { DataTable, type DataTableColumn } from 'mantine-datatable';
 import { IoSearchOutline, IoDownloadOutline } from "react-icons/io5";
-import { Title, Text, Paper, Group, Stack, Box, TextInput, Button, Image, Grid } from "@mantine/core"; //Grid, Card
+import { Title, Text, Paper, Group, Stack, Box, TextInput, Button, Image, Grid, Card } from "@mantine/core";
 
-import { useGetOtherSources, useGetFilters } from "@/services/market-pricing/pricing"; //useGetComparePrice
-import type { OtherSourcesResponse } from "@/services/market-pricing/pricing.types";
+import { useGetOtherSources, useGetFilters, useGetComparePrices } from "@/services/market-pricing/pricing";
+import type { OtherSourcesResponse, InsightParams } from "@/services/market-pricing/pricing.types";
 
 import emptyImg from "@/assets/empty.svg";
 import styles from "./others.module.scss";
@@ -14,16 +14,16 @@ import { formatDate } from "@/utils/default";
 import LoadingTable from "@/components/ui/misc/loadingTable";
 import ErrorCard from "@/components/ui/misc/errorCard";
 import FormSelect from "@/components/base/forms/formSelect";
-//import FormButton from "@/components/base/formButton";
+import FormButton from "@/components/base/forms/formButton";
 
 const PAGE_SIZES = [10, 15, 20, 50, 100, 500];
 
-/*interface FormData {
+interface FormData {
     commodity: string;
     market1: string;
     market2: string;
     month: string;
-}*/
+}
 
 export default function OtherSources() {
     const [page, setPage] = useState(1);
@@ -31,7 +31,7 @@ export default function OtherSources() {
     const [searchTerm, setSearchTerm] = useState<string>("");
     const [commodity, setCommodity] = useState<string>("");
     const [location, setLocation] = useState<string>("");
-    //const [compareParams, setCompareParams] = useState<InsightParams | null>(null);
+    const [compareParams, setCompareParams] = useState<InsightParams | null>(null);
 
     const { data, error, status, refetch } = useGetOtherSources({
         page,
@@ -50,10 +50,10 @@ export default function OtherSources() {
         })) || []),
     ];
 
-    {/*const commodities = filters.data?.other_sources.commodities.map(c => ({
+    const commodities = filters.data?.other_sources.commodities.map(c => ({
         label: c,
         value: c
-    })) || [];*/}
+    })) || [];
 
     const locationOptions = [
         { label: "All Locations", value: "" },
@@ -63,7 +63,7 @@ export default function OtherSources() {
         })) || []),
     ];
 
-    {/*const months = filters.data?.months.map(m => ({
+    const months = filters.data?.months.map(m => ({
         label: m,
         value: m
     })) || [];
@@ -102,7 +102,7 @@ export default function OtherSources() {
         setTimeout(() => {
             refetchCompare();
         }, 0);
-    });*/}
+    });
 
     const filteredList = useMemo(() => {
         if (!data) return [];
@@ -230,52 +230,11 @@ export default function OtherSources() {
             return _renderEmpty();
         else return (
             <Box my={50}>
-                {/*<Grid align="stretch">
+                <Grid align="stretch">
                     <Grid.Col span={{ base: 12, xl: 12 }}>
                         <Card h="100%" p={0}>
                             <Grid align="stretch">
-                                <Grid.Col span={{ base: 12, md: 12, xl: 3 }}>
-                                    <Card className={`${styles.metrics} ${styles.metrics1}`} h="100%" withBorder>
-                                        <Stack className={`${styles.metrics__content1} ${styles.metrics__content}`} justify="center">
-                                            {
-                                                compareData?.success == true ?
-                                                    <Stack justify="space-between" className={`${styles.metrics__content}`}>
-                                                        <Text size="md" fw={400} tt="uppercase">Cheapest Market</Text>
-                                                        <Title fw={600} tt="uppercase" order={2} >{compareData.comparison.buy_from.market}</Title>
-                                                        <Text size="md" fw={400} tt="uppercase">Market Price</Text>
-                                                        <Text size="md" fw={400} tt="uppercase">&#x20A6; {compareData.comparison.buy_from.avg_price_per_kg.toLocaleString("en", { minimumFractionDigits: 2 })} (Avg/kg)</Text>
-                                                        <Text size="md" fw={400} tt="uppercase">&#x20A6; {compareData.comparison.buy_from.avg_price_per_bag.toLocaleString("en", { minimumFractionDigits: 2 })} (Avg/bag)</Text>
-                                                    </Stack>
-                                                    :
-                                                    <Stack>
-                                                        <Text size="md" fw={400} tt="uppercase">Data unavailable.</Text>
-                                                        <Text size="md" fw={400}>Select filters to compare market prices.</Text>
-                                                    </Stack>
-                                            }
-                                        </Stack>
-                                    </Card>
-                                </Grid.Col>
-                                <Grid.Col span={{ base: 12, md: 12, xl: 3 }}>
-                                    <Card className={`${styles.metrics} ${styles.metrics2}`} h="100%" withBorder>
-                                        <Stack className={`${styles.metrics__content2} ${styles.metrics__content}`} justify="center">
-                                            {
-                                                compareData?.success == true ?
-                                                    <Stack justify="space-between" className={`${styles.metrics__content}`}>
-                                                        <Text size="md" fw={400} tt="uppercase">Expensive Market</Text>
-                                                        <Title fw={600} tt="uppercase" order={2} >{compareData.comparison.avoid.market}</Title>
-                                                        <Text size="md" fw={400} tt="uppercase">Market Price</Text>
-                                                        <Text size="md" fw={400} tt="uppercase">&#x20A6; {compareData.comparison.avoid.avg_price_per_kg.toLocaleString("en", { minimumFractionDigits: 2 })} (Avg/kg)</Text>
-                                                        <Text size="md" fw={400} tt="uppercase">&#x20A6; {compareData.comparison.avoid.avg_price_per_bag.toLocaleString("en", { minimumFractionDigits: 2 })} (Avg/bag)</Text>
-                                                    </Stack>
-                                                    : 
-                                                    <Stack>
-                                                        <Text size="md" fw={400} tt="uppercase">Data unavailable.</Text>
-                                                        <Text size="md" fw={400}>Select filters to compare market prices.</Text>
-                                                    </Stack>
-                                            }
-                                        </Stack>
-                                    </Card>
-                                </Grid.Col>
+                                
                                 <Grid.Col span={{ base: 12, md: 12, xl: 6 }}>
                                     <Paper className={`${styles.metrics} ${styles.metrics3}`}>
                                         <form onSubmit={handleCompareSubmit}>
@@ -339,11 +298,53 @@ export default function OtherSources() {
                                         </form>
                                     </Paper>
                                 </Grid.Col>
+                                <Grid.Col span={{ base: 12, md: 12, xl: 3 }}>
+                                    <Card className={`${styles.metrics} ${styles.metrics1}`} h="100%" withBorder>
+                                        <Stack className={`${styles.metrics__content1} ${styles.metrics__content}`} justify="center">
+                                            {
+                                                compareData?.success == true ?
+                                                    <Stack justify="space-between" className={`${styles.metrics__content}`}>
+                                                        <Text size="md" fw={400} tt="uppercase">Cheapest Market</Text>
+                                                        <Title fw={600} tt="uppercase" order={2} >{compareData.comparison.buy_from.market}</Title>
+                                                        <Text size="md" fw={400} tt="uppercase">Market Price</Text>
+                                                        <Text size="md" fw={400} tt="uppercase">&#x20A6; {compareData.comparison.buy_from.avg_price_per_kg.toLocaleString("en", { minimumFractionDigits: 2 })} (Avg/kg)</Text>
+                                                        <Text size="md" fw={400} tt="uppercase">&#x20A6; {compareData.comparison.buy_from.avg_price_per_bag.toLocaleString("en", { minimumFractionDigits: 2 })} (Avg/bag)</Text>
+                                                    </Stack>
+                                                    :
+                                                    <Stack>
+                                                        <Text size="md" fw={400} tt="uppercase">Data unavailable.</Text>
+                                                        <Text size="md" fw={400}>Select filters to compare market prices.</Text>
+                                                    </Stack>
+                                            }
+                                        </Stack>
+                                    </Card>
+                                </Grid.Col>
+                                <Grid.Col span={{ base: 12, md: 12, xl: 3 }}>
+                                    <Card className={`${styles.metrics} ${styles.metrics2}`} h="100%" withBorder>
+                                        <Stack className={`${styles.metrics__content2} ${styles.metrics__content}`} justify="center">
+                                            {
+                                                compareData?.success == true ?
+                                                    <Stack justify="space-between" className={`${styles.metrics__content}`}>
+                                                        <Text size="md" fw={400} tt="uppercase">Expensive Market</Text>
+                                                        <Title fw={600} tt="uppercase" order={2} >{compareData.comparison.avoid.market}</Title>
+                                                        <Text size="md" fw={400} tt="uppercase">Market Price</Text>
+                                                        <Text size="md" fw={400} tt="uppercase">&#x20A6; {compareData.comparison.avoid.avg_price_per_kg.toLocaleString("en", { minimumFractionDigits: 2 })} (Avg/kg)</Text>
+                                                        <Text size="md" fw={400} tt="uppercase">&#x20A6; {compareData.comparison.avoid.avg_price_per_bag.toLocaleString("en", { minimumFractionDigits: 2 })} (Avg/bag)</Text>
+                                                    </Stack>
+                                                    : 
+                                                    <Stack>
+                                                        <Text size="md" fw={400} tt="uppercase">Data unavailable.</Text>
+                                                        <Text size="md" fw={400}>Select filters to compare market prices.</Text>
+                                                    </Stack>
+                                            }
+                                        </Stack>
+                                    </Card>
+                                </Grid.Col>
                             </Grid>
                         </Card>
                     </Grid.Col >
                 </Grid >
-                {compareData?.success == false && <Text c="red" mt={20} ta="right" fw={500}>Error: {compareData?.market1_status?.error}</Text>}*/}
+                {compareData?.success == false && <Text c="red" mt={20} ta="right" fw={500}>Error: {compareData?.market1_status?.error}</Text>}
                 <Paper my={50}>
                     <Text size="lg" tt="uppercase" fw={400}>
                         Open Market Prices
@@ -401,7 +402,6 @@ export default function OtherSources() {
                         stripedColor="#fffdfb"
                         borderColor="#f1902512"
                         pinFirstColumn
-                        //pinLastColumn
                         highlightOnHover
                         highlightOnHoverColor="#fef9f3"
                         totalRecords={data?.pagination?.total_records}

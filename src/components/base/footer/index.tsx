@@ -23,7 +23,6 @@ export default function Footer() {
             <Grid gutter={break_sm ? "xl" : "md"} justify="space-between">
                 <Grid.Col span={{ base: 12, md: 4, lg: 4 }}>
                     <div className={styles.footer__col}>
-                        {/* <Title order={3} fw={600} c="white">Stay Connected!</Title> */}
                         <img className={styles.footer__col__brand} src={brandImg} alt="Kasuwa" />
 
                         <Text size="sm" fw={300} c="white">
@@ -85,16 +84,10 @@ export default function Footer() {
                                 <Link to="/market-pricing">Market Pricing</Link>
                             </li>
                             <li className={styles.footer__col__list__item}>
+                                <Link to="/privacy-policy">Privacy Policy</Link>
+                            </li>
+                            <li className={styles.footer__col__list__item}>
                                 <Link to="/support">Support</Link>
-                            </li>
-                            <li className={styles.footer__col__list__item}>
-                                <Link to="/legal-policy">Privacy Policy</Link>
-                            </li>
-                            <li className={styles.footer__col__list__item}>
-                                <Link to="/cookie-policy">Cookie Policy</Link>
-                            </li>
-                            <li className={styles.footer__col__list__item}>
-                                <Link to="/terms-and-conditions">Terms And Conditions</Link>
                             </li>
                             <li className={styles.footer__col__list__item}>
                                 <Anchor underline="never" size="sm" className={styles.footer__col__list__item} href="https://web.facebook.com/agriarchelimited?mibextid=ZbWKwL&_rdc=1&_rdr" target="_blank" onClick={getStarted}>

@@ -6,7 +6,6 @@ import styles from './header.module.scss';
 import PricingIndex from '@/components/ui/pricingIndex';
 
 import logo from "@/assets/logo.svg";
-import { forwardRef } from "react";
 
 export default function Header() {
     const [opened, { toggle }] = useDisclosure();
@@ -17,12 +16,6 @@ export default function Header() {
     function getStarted() {
         window.open(`https://app.kasuwa.com/login`, "_blank");
     }
-
-    const Legal = forwardRef<HTMLDivElement, React.ComponentPropsWithoutRef<'div'>>((props, ref) => (
-        <div ref={ref} {...props}>
-            Legal
-        </div>
-    ));
 
     return (
         <header className={styles.header}>
@@ -49,33 +42,17 @@ export default function Header() {
                             </li>
 
                             <li className={styles.box__list__item}>
+                                <Link to="/privacy-policy">
+                                    Privacy Policy
+                                </Link>
+                            </li>
+
+                            <li className={styles.box__list__item}>
                                 <Link to="/support">
                                     Support
                                 </Link>
                             </li>
-                            <li className={styles.box__list__item}>
-                                <Menu
-                                    shadow="md"
-                                    width={300}
-                                >
-
-                                    <Menu.Target>
-                                        <Legal />
-                                    </Menu.Target>
-
-                                    <Menu.Dropdown>
-                                        <Menu.Item component={Link} to="/privacy-policy">
-                                            Privacy Policy
-                                        </Menu.Item>
-                                        <Menu.Item component={Link} to="/cookie-policy">
-                                            Cookie Policy
-                                        </Menu.Item>
-                                        <Menu.Item component={Link} to="/terms-and-conditions">
-                                            Terms And Conditions
-                                        </Menu.Item>
-                                    </Menu.Dropdown>
-                                </Menu>
-                            </li>
+                            
                             <li>
                                 <Button
                                     size="md"
@@ -115,17 +92,11 @@ export default function Header() {
                             <Menu.Item component={Link} to="/market-pricing">
                                 Market Prices
                             </Menu.Item>
-                            <Menu.Item component={Link} to="/support">
-                                Support
-                            </Menu.Item>
                             <Menu.Item component={Link} to="/privacy-policy">
                                 Privacy Policy
                             </Menu.Item>
-                            <Menu.Item component={Link} to="/cookie-policy">
-                                Cookie Policy
-                            </Menu.Item>
-                            <Menu.Item component={Link} to="/terms-and-conditions">
-                                Terms And Conditions
+                            <Menu.Item component={Link} to="/support">
+                                Support
                             </Menu.Item>
                         </Menu.Dropdown>
                     </Menu>
