@@ -69,7 +69,7 @@ Backkend:
 - Open project directory `cd kl-pricing`
 - Install dependencies and devdependencies `npm install`
 - Run the development server `npm run dev`
-- Open bage in browser `http://localhost:5173/`
+- Open page in browser `http://localhost:5173/`
 
 ### Project Structure
 src/
