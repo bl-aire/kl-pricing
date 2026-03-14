@@ -89,3 +89,13 @@ https://kasuwa.com/market-pricing
 
 
 ### Lessons Learned
+
+While building Kasuwa, asides horning my technical skills, I have learned the following:
+1. Embrace the red
+As a beginner, I was scared of seeing errors on my console. They made me feel like I wasn’t making progress, but now, I've learned to embrace errors as the fastest way to learn is by breaking a code in as many ways as possible and fixing it.
+2. No question is silly.
+I have learned to ASK QUESTIONS. Questions help me clear blockers, and have helped me learn how to communicate better.
+3. Learning is lifelong
+The same curiosity I felt when I saw my first “Hello World” render in a browser years ago is the same curiosity that drives me today. I’m eager to continuously soak up relevant knowledge, be it through online resources, meaningful conversations with colleagues, or hands-on experimentation.
+To stay aligned with industry trends, deepen my learning, and build meaningful connections within my community, I actively attend tech conferences and meetups like Moonshot by TechCabal and Founders Friday, a monthly gathering of professionals in tech.
+
